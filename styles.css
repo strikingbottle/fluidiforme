@@ -1,6 +1,43 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
+  
+}
+
+#topMenu {
+  position: fixed;
+  top: 400px;
+  left: 30px;
+  padding: 10px;
+}
+
+#topMenu a {
+  color: black;
+  text-decoration: none;
+  margin-bottom: 10px; /* Add margin between menu items */
+  display: block
+}
+
+.left-column {
+  flex: 1;
+  position: relative;
+}
+
+.right-column {
+  flex: 1;
+  position: relative;
+  left: 150px; /* Adjust as needed to create some space between the columns */
+}
+
+
+.project-data {
+}
+
+
+h2 {
+}
+
+p {
 }
 
 .nav-container {
@@ -70,6 +107,7 @@ a {
   display: block;
   animation: slide-up 0.5s ease-in-out;
 }
+
 
 @keyframes slide-up {
   from {
