@@ -90,6 +90,42 @@
         transform: translateY(0);
       }
     }
+
+    .popup-container {
+      position: relative;
+    }
+
+    .popup {
+      position: absolute;
+      display: block;
+      justify-content: center;
+      align-items: center;
+      background-color: #ffffff;
+      border: 1px solid #000000;
+      z-index: 9999;
+      padding: 10px; /* Adjust padding to decrease popup size */
+      max-width: 200px; /* Adjust maximum width to decrease popup size */
+      cursor: move; /* Make it draggable */
+    }
+
+    .popup-content {
+      max-width: 100%;
+      max-height: 100%;
+      text-align: center; /* Center the image horizontally */
+    }
+
+    .popup-content img {
+      max-width: 100%;
+      max-height: 100%;
+      height: auto; /* Allow the image to scale proportionally */
+    }
+
+    .close {
+      position: absolute;
+      top: 5px;
+      right: 10px;
+      cursor: pointer;
+    }
   </style>
   <title>Home Page</title>
 </head>
@@ -105,14 +141,102 @@
   <div class="slide-up-container show">
     <div class="slide-up-content" id="slideUpContent"></div>
     <div class="main-content" id="main-content">
-      <h1>Main Content Goes Here</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+      <div class="popup-container" style="top: 100px; left: 100px;" id="popupContainerA">
+        <button onclick="togglePopup(event, 'images/a.jpg')">Open Popup A</button>
+        <div class="popup" id="popupA">
+          <div class="popup-content">
+            <span class="close" onclick="togglePopup(event, 'images/a.jpg')">&times;</span>
+            <img src="images/a.jpg" alt="Image A">
+          </div>
+        </div>
+      </div>
+      
+      <div class="popup-container" style="top: 200px; left: 200px;" id="popupContainerB">
+        <button onclick="togglePopup(event, 'images/b.jpg')">Open Popup B</button>
+        <div class="popup" id="popupB">
+          <div class="popup-content">
+            <span class="close" onclick="togglePopup(event, 'images/b.jpg')">&times;</span>
+            <img src="images/b.jpg" alt="Image B">
+          </div>
+        </div>
+      </div>
+      
+      <div class="popup-container" style="top: 300px; left: 300px;" id="popupContainerC">
+        <button onclick="togglePopup(event, 'images/c.jpg')">Open Popup C</button>
+        <div class="popup" id="popupC">
+          <div class="popup-content">
+            <span class="close" onclick="togglePopup(event, 'images/c.jpg')">&times;</span>
+            <img src="images/c.jpg" alt="Image C">
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
   <script>
+    function makeDraggable(element) {
+      var isDragging = false;
+      var initialX;
+      var initialY;
+      var offsetX = 0;
+      var offsetY = 0;
+
+      element.addEventListener("mousedown", function (e) {
+        if (e.target.classList.contains("popup") || e.target.classList.contains("popup-content") || e.target.classList.contains("close")) {
+          return;
+        }
+        isDragging = true;
+        var rect = element.getBoundingClientRect();
+        initialX = e.clientX - rect.left;
+        initialY = e.clientY - rect.top;
+        offsetX = rect.left;
+        offsetY = rect.top;
+        element.style.cursor = "grabbing";
+      });
+
+      document.addEventListener("mousemove", function (e) {
+        if (isDragging) {
+          var newX = e.clientX - initialX;
+          var newY = e.clientY - initialY;
+          element.style.left = newX + "px";
+          element.style.top = newY + "px";
+        }
+      });
+
+      document.addEventListener("mouseup", function () {
+        isDragging = false;
+        element.style.cursor = "grab";
+      });
+    }
+
+    makeDraggable(document.getElementById("popupContainerA"));
+    makeDraggable(document.getElementById("popupContainerB"));
+    makeDraggable(document.getElementById("popupContainerC"));
+
+    function togglePopup(event, imageUrl) {
+      if (isDragging) {
+        return;
+      }
+      var popup;
+      if (imageUrl.includes('images/a.jpg')) {
+        popup = document.getElementById("popupA");
+      } else if (imageUrl.includes('images/b.jpg')) {
+        popup = document.getElementById("popupB");
+      } else if (imageUrl.includes('images/c.jpg')) {
+        popup = document.getElementById("popupC");
+      }
+
+      if (popup.style.display !== "none") {
+        popup.style.display = "none";
+      } else {
+        popup.querySelector('img').src = imageUrl;
+        popup.style.display = "block";
+      }
+      event.stopPropagation();
+    }
+
     async function loadPage(pageUrl) {
-      const slideUpContent = document.getElementById('slideUpContent');git config --list
+      const slideUpContent = document.getElementById('slideUpContent');
 
       try {
         const response = await fetch(pageUrl);
@@ -126,7 +250,6 @@
 
     function showSlideUpContent() {
       const slideUpContainer = document.querySelector('.slide-up-container');
-      // Check if 'show' class is not already present
       if (!slideUpContainer.classList.contains('show')) {
         slideUpContainer.classList.add('show');
         document.getElementById('main-content').style.marginTop = '0';
