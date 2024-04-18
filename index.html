@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="style.css">
+  <title>Home Page</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#home" onclick="showContent('home')">Home</a>
+      <a href="#projects" onclick="showContent('projects')">Project</a>
+      <a href="#about" onclick="showContent('about')">About</a>
+    </nav>
+  </header>
+
+  <div class="slide-up-container show" id="homeContainer">
+    <div class="slide-up-content" id="homeContent">
+      <!-- Home section content goes here -->
+      <div class="main-content" id="main-content">
+        <img src="images/a.jpg" alt="Image A" class="draggable" style="top: 100px; left: 100px;">
+        <img src="images/b.jpg" alt="Image B" class="draggable" style="top: 200px; left: 200px;">
+        <img src="images/c.jpg" alt="Image C" class="draggable" style="top: 300px; left: 300px;">
+      </div>
+    </div>
+  </div>
+
+  <div class="slide-up-container" id="aboutContainer">
+    <div class="slide-up-content" id="aboutContent">
+      <!-- About section content goes here -->
+      <h2>About Us</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+  </div>
+
+  <div class="slide-up-container" id="projectsContainer">
+    <div class="slide-up-content" id="projectsContent">
+      <div class="main-content" id="main-content">
+
+        <div class="left-column">
+          <div class="topMenu">
+            <a href="#projects_a" onclick="showProject('projects_a')">Project A</a>
+            <a href="#projects_b" onclick="showProject('projects_b')">Project B</a>
+            <a href="#">Project C</a>
+          </div>
+        </div>
+        <div class="right-column">
+          <div class="project-data-container visible" id="projects_aContainer">
+            <div class="project-data-content" id="projects_a_Content">
+              <h2>About Us</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>        
+            </div>
+          </div>
+          <div class="project-data-container" id="projects_bContainer">
+            <div class="project-data-content" id="projects_b_Content">
+                <h2>Project Information</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dictum at tempor commodo ullamcorper a lacus. Ut faucibus pulvinar elementum integer enim neque volutpat ac. Viverra justo nec ultrices dui sapien eget mi proin sed. At lectus urna duis convallis. Ut enim blandit volutpat maecenas volutpat blandit. Orci ac auctor augue mauris augue. Arcu risus quis varius quam quisque id diam vel. Non odio euismod lacinia at quis risus sed vulputate odio. In hac habitasse platea dictumst quisque sagittis purus sit amet.
+      
+                  Viverra vitae congue eu consequat. Sed odio morbi quis commodo. Praesent tristique magna sit amet purus gravida quis blandit. Magna fringilla urna porttitor rhoncus dolor purus non enim. Vehicula ipsum a arcu cursus vitae congue mauris rhoncus aenean. Volutpat odio facilisis mauris sit. Egestas integer eget aliquet nibh praesent. Auctor augue mauris augue neque gravida in fermentum. Non sodales neque sodales ut etiam sit amet. Ipsum dolor sit amet consectetur adipiscing. Purus semper eget duis at tellus at urna condimentum. Odio tempor orci dapibus ultrices in. Augue mauris augue neque gravida in fermentum.
+                  
+                  Id aliquet lectus proin nibh nisl condimentum id venenatis a. Sit amet venenatis urna cursus eget nunc scelerisque viverra mauris. Amet purus gravida quis blandit turpis cursus in hac habitasse. Faucibus a pellentesque sit amet porttitor eget dolor morbi. Elit pellentesque habitant morbi tristique senectus et netus. Quisque id diam vel quam elementum pulvinar etiam non quam. Lacus laoreet non curabitur gravida arcu. Tempor orci eu lobortis elementum. Pharetra massa massa ultricies mi quis hendrerit dolor magna. Volutpat ac tincidunt vitae semper quis lectus nulla at.
+                  
+                  Bibendum ut tristique et egestas. Sollicitudin nibh sit amet commodo nulla facilisi. Sem fringilla ut morbi tincidunt. Etiam sit amet nisl purus in mollis. Eget mauris pharetra et ultrices. Tincidunt vitae semper quis lectus. Sed velit dignissim sodales ut eu. Facilisi morbi tempus iaculis urna id volutpat lacus laoreet non. Eu tincidunt tortor aliquam nulla facilisi. Euismod nisi porta lorem mollis aliquam ut. Arcu vitae elementum curabitur vitae nunc sed velit dignissim sodales. Vel orci porta non pulvinar neque laoreet suspendisse interdum. Convallis posuere morbi leo urna molestie at elementum eu. Ut diam quam nulla porttitor massa id neque aliquam.
+                  
+                  Tempor orci dapibus ultrices in iaculis. Sed vulputate odio ut enim blandit. A condimentum vitae sapien pellentesque habitant morbi tristique senectus. Porttitor leo a diam sollicitudin tempor id. Quis auctor elit sed vulputate mi sit. Imperdiet dui accumsan sit amet nulla facilisi morbi. Fringilla est ullamcorper eget nulla facilisi etiam dignissim diam quis. In mollis nunc sed id semper risus in hendrerit gravida. Molestie ac feugiat sed lectus vestibulum. Feugiat nisl pretium fusce id. Elementum pulvinar etiam non quam lacus. Lectus arcu bibendum at varius. Sit amet tellus cras adipiscing. Nunc mattis enim ut tellus elementum sagittis vitae et. Augue eget arcu dictum varius duis at consectetur. Porttitor eget dolor morbi non arcu risus. Sociis natoque penatibus et magnis dis parturient montes. Adipiscing tristique risus nec feugiat in fermentum posuere urna.</p>
+                <!-- Add more project data as needed -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>    
+    </div>
+  </div>
+
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+  <script>
+    // Function to show content based on menu click
+    function showContent(content) {
+      $('.slide-up-container').removeClass('show');
+      $('#' + content + 'Container').addClass('show');
+    }
+
+    function showProject(p){
+      $('.project-data-container').removeClass('visible');
+      $('#' + p + 'Container').addClass('visible');
+    }
+
+    // Make images draggable using jQuery UI
+    $('.draggable').draggable({
+      containment: 'parent' // Keep the images within the parent container
+    });
+                
+    /*
+    // Questa porzione di codice genera il contenuto del project_a
+    // se decommentato il testo riportato alle righe 105 e 110 verrá aggiunto dopo la parte copiata da AboutUs 
+    //Creo elemento dinamicamimente
+    //Creo il titolo del progetto
+    const projectTitle = document.createElement('h2');
+    projectTitle.classList.add('P_Title')
+    projectTitle.textContent = 'Project Title';
+
+    //Creo il contenuto del Progetto
+    const projectBody = document.createElement('div');
+    projectBody.classList.add('P_Body')
+    projectBody.textContent = 'ẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XT';
+
+    //Seleziono l'elemento contentitore e ci appendo il contenuto
+    const projects_a_Content = document.getElementById('projects_a_Content');
+    projects_a_Content.appendChild(projectTitle);
+    projects_a_Content.appendChild(projectBody);
+    */
+              
+  </script>
+</body>
+</html>
