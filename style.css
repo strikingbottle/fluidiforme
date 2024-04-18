@@ -90,7 +90,8 @@ body {
   
   .draggable {
     cursor: move;
-    width: 100px; /* Adjust the width */
+    /* Images dimensions are changed here */
+    width: 300px; /* Adjust the width */
     height: auto; /* Maintain aspect ratio */
   }
   

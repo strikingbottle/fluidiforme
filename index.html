@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+</body>
+
   <title>Home Page</title>
 </head>
 <body>
@@ -18,11 +22,8 @@
 
   <div class="slide-up-container show" id="homeContainer">
     <div class="slide-up-content" id="homeContent">
-      <!-- Home section content goes here -->
+      <!-- Home section content is generated dynamically -->
       <div class="main-content" id="main-content">
-        <img src="images/a.jpg" alt="Image A" class="draggable" style="top: 100px; left: 100px;">
-        <img src="images/b.jpg" alt="Image B" class="draggable" style="top: 200px; left: 200px;">
-        <img src="images/c.jpg" alt="Image C" class="draggable" style="top: 300px; left: 300px;">
       </div>
     </div>
   </div>
@@ -73,48 +74,5 @@
       </div>    
     </div>
   </div>
-
-
-
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
-  <script>
-    // Function to show content based on menu click
-    function showContent(content) {
-      $('.slide-up-container').removeClass('show');
-      $('#' + content + 'Container').addClass('show');
-    }
-
-    function showProject(p){
-      $('.project-data-container').removeClass('visible');
-      $('#' + p + 'Container').addClass('visible');
-    }
-
-    // Make images draggable using jQuery UI
-    $('.draggable').draggable({
-      containment: 'parent' // Keep the images within the parent container
-    });
-                
-    /*
-    // Questa porzione di codice genera il contenuto del project_a
-    // se decommentato il testo riportato alle righe 105 e 110 verrá aggiunto dopo la parte copiata da AboutUs 
-    //Creo elemento dinamicamimente
-    //Creo il titolo del progetto
-    const projectTitle = document.createElement('h2');
-    projectTitle.classList.add('P_Title')
-    projectTitle.textContent = 'Project Title';
-
-    //Creo il contenuto del Progetto
-    const projectBody = document.createElement('div');
-    projectBody.classList.add('P_Body')
-    projectBody.textContent = 'ẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XTẞøňë Þ3XT';
-
-    //Seleziono l'elemento contentitore e ci appendo il contenuto
-    const projects_a_Content = document.getElementById('projects_a_Content');
-    projects_a_Content.appendChild(projectTitle);
-    projects_a_Content.appendChild(projectBody);
-    */
-              
-  </script>
-</body>
+  <script src="script.js"></script>
 </html>
