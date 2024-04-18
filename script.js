@@ -41,3 +41,16 @@
   jQuery(document).ready(function($) {
     generateImages();
 });
+
+const sections = document.querySelectorAll('.section');
+
+window.addEventListener('scroll', function() {
+    sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+            section.style.display = 'block';
+        } else {
+            section.style.display = 'none';
+        }
+    });
+});

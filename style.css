@@ -98,13 +98,12 @@ body {
   .left-column{
     margin-right: 20px;
   }
-  
-  .right-column{
+
+  .right-column {
+    overflow-y: scroll; /* Enable vertical scrolling */
     margin-right: px;
+    scroll-snap-type: y mandatory; /* Snap to each block when scrolling */
   }
-  
-  
-  
   
   
   .topMenu{
