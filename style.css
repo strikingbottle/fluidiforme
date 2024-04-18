@@ -1,0 +1,143 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent scrolling during animation */
+  }
+  
+  header {
+    display: block;
+  }
+  
+  
+  nav {
+    background-color: #444;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: rgba(68, 68, 68, 0.6);
+    padding: 2px;
+    margin: 10px;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 2;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 20px;
+    display: inline-block;
+    border-radius: 10px;
+  }
+  
+  nav a:hover {
+    background-color: #555;
+  }
+  
+  .slide-up-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f1f1f1;
+    overflow: hidden;
+    display: none;
+    z-index: 1;
+    padding: 20px; /* Adjust padding as needed */
+    box-sizing: border-box;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Optional: Add a box shadow */
+  }
+  
+  .slide-up-content {
+    margin-top: 40px; /* Adjust to match header height */
+    padding: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .main-content {
+    position: absolute;
+    top: 10;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /*regole per Projects*/
+    display: grid;
+    grid-template-columns: 1fr 3fr; 
+    gap: 20px; /* Spazio tra le colonne */
+    overflow: auto;/*Abilita lo scroll*/
+  }
+  
+  .slide-up-container.show {
+    display: block;
+    animation: slide-up 0.5s ease-in-out;
+  }
+  
+  @keyframes slide-up {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  
+  .draggable {
+    cursor: move;
+    width: 100px; /* Adjust the width */
+    height: auto; /* Maintain aspect ratio */
+  }
+  
+  .left-column{
+    margin-right: 20px;
+  }
+  
+  .right-column{
+    margin-right: px;
+  }
+  
+  
+  
+  
+  
+  .topMenu{
+    position: fixed;
+    bottom: 100px;
+    left: 30px;
+    padding: 10px;
+    
+  }
+  
+  .topMenu a {
+  
+    font-size: medium;
+    color: black;
+    text-decoration: none;
+    margin-bottom: 10px; /* Add margin between menu items */
+    display: block
+  }
+  
+  .project-data-container {
+    background-color: #f1f1f1;
+    overflow: hidden;
+    display: none;
+    margin-right: 50px;
+    padding: 20px; /* Adjust padding as needed */
+  
+  }
+  
+  .project-data-container.visible {
+    display: block;
+    animation: slide-up 0.5s ease-in-out;
+  }
+  
+  
+  .P_Title {
+    color: red;
+  }
