@@ -1,16 +1,144 @@
+/* Common style*/
 
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    overflow: hidden; /* Prevent scrolling during animation */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Prevent scrolling during animation */
+}
+
+header {
+  display: block;
+}
+
+.slide-up-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f1f1f1;
+  overflow: hidden;
+  display: none;
+  z-index: 1;
+  padding: 20px; /* Adjust padding as needed */
+  box-sizing: border-box;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Optional: Add a box shadow */
+}
+
+/* Style for mobile*/
+@media (max-width: 999px) {
+  /*Rules for NavBar*/
+  nav {
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;   
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: rgba(68, 68, 68, 0.6);
+    position: fixed;
+    top: 10px;
+    left: 5%;
+    z-index: 2;
   }
-  
-  header {
+  nav a {
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 20px;
+    display: inline-block;
+    border-radius: 10px;
+  }
+  nav a:hover {
+    background-color: #555;
+  }
+  /*Rules for slide-up effect on click and main containers*/
+  .slide-up-container.show {
     display: block;
+    animation: slide-up 0.5s ease-in-out;
+    padding-left: 5%;
+  }
+  .slide-up-content {
+    margin-top: 40px; /* Adjust to match header height */
+    padding: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  /*Rules for Main Content*/
+  .main-content {
+    position: absolute;
+    top: 10;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+  /*Rules to slideshow in homepage*/
+  .main-content img {
+    width: 100%; /* Adjust based on your layout */
+    height: auto; /* Maintain aspect ratio */
+    display: none; /* Hide all images initially */
+    position: absolute; /* Overlay images on top of each other */
+    top: 0;
+    left: 0;
   }
   
-  
+  .main-content img:first-child {
+    display: block; /* Show the first image by default */
+  }
+
+  /*Rules for about page impagina correttamente il contenuto di about sovrascrivendo la width */
+  #aboutContent{
+    width: auto;
+  }
+  /*Rules for Projects Page*/
+  .projectsMenu{
+    display: none;
+  }
+  #show.projectsMenu {
+    display: block;
+    animation: slide-up 0.5s ease-in-out;
+    /*regole per il display grid*/
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; 
+    gap: 20px; /* Spazio tra le colonne */
+    justify-content: center;
+    align-items: center;
+    width: 95%
+  }
+  .projectsMenu a {
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    width: 75%; /* Adjust width as needed */
+    height: 100px; /* Adjust height as needed to maintain square shape */
+    background-color: rgba(68, 68, 68, 0.6);
+    color: #ffffff; /* Text color */
+    text-decoration: none; /* Remove underline from links */
+    border-radius: 20px; /* Adjust for roundness */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    margin: auto;
+  }
+  .projectsMenu a:hover {
+    background-color: #444; /* Darker shade when hovered for visual feedback */
+  }
+  .project-data-container {
+    background-color: #f1f1f1;
+    overflow: hidden;
+    display: none;
+    margin-right: 50px;
+    padding: 20px; /* Adjust padding as needed */
+  }
+  .project-data-container.visible {
+    display: block;
+    animation: slide-up 0.5s ease-in-out;
+  }
+}
+/* Style for desktop*/
+@media (min-width: 1000px) {
+  /*Rules for NavBar*/
   nav {
     background-color: #444;
     border-radius: 10px;
@@ -23,7 +151,6 @@ body {
     left: 10px;
     z-index: 2;
   }
-  
   nav a {
     color: #fff;
     text-decoration: none;
@@ -31,26 +158,15 @@ body {
     display: inline-block;
     border-radius: 10px;
   }
-  
   nav a:hover {
     background-color: #555;
   }
-  
-  .slide-up-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #f1f1f1;
-    overflow: hidden;
-    display: none;
-    z-index: 1;
-    padding: 20px; /* Adjust padding as needed */
-    box-sizing: border-box;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Optional: Add a box shadow */
+
+  /*Rules for slide-up effect on click and main containers*/
+  .slide-up-container.show {
+  display: block;
+  animation: slide-up 0.5s ease-in-out;
   }
-  
   .slide-up-content {
     margin-top: 40px; /* Adjust to match header height */
     padding: 20px;
@@ -60,7 +176,15 @@ body {
     width: 100%;
     height: 100%;
   }
-  
+
+  /*Rules for homepage behaviour*/
+  .draggable {
+    cursor: move;
+    /* Images dimensions are changed here */
+    width: 300px; /* Adjust the width */
+    height: auto; /* Maintain aspect ratio */
+  }
+  /*Rules for Projects Page behaviour*/
   .main-content {
     position: absolute;
     top: 10;
@@ -73,71 +197,57 @@ body {
     gap: 20px; /* Spazio tra le colonne */
     overflow: auto;/*Abilita lo scroll*/
   }
-  
-  .slide-up-container.show {
-    display: block;
-    animation: slide-up 0.5s ease-in-out;
-  }
-  
-  @keyframes slide-up {
-    from {
-      transform: translateY(100%);
-    }
-    to {
-      transform: translateY(0);
-    }
-  }
-  
-  .draggable {
-    cursor: move;
-    /* Images dimensions are changed here */
-    width: 300px; /* Adjust the width */
-    height: auto; /* Maintain aspect ratio */
-  }
-  
   .left-column{
     margin-right: 20px;
   }
-
   .right-column {
     overflow-y: scroll; /* Enable vertical scrolling */
     margin-right: px;
     scroll-snap-type: y mandatory; /* Snap to each block when scrolling */
   }
-  
-  
-  .topMenu{
+  .projectsMenu{
     position: fixed;
     bottom: 100px;
     left: 30px;
     padding: 10px;
-    
+
   }
-  
-  .topMenu a {
-  
+  .projectsMenu a {
     font-size: medium;
     color: black;
     text-decoration: none;
     margin-bottom: 10px; /* Add margin between menu items */
     display: block
   }
-  
   .project-data-container {
     background-color: #f1f1f1;
     overflow: hidden;
     display: none;
     margin-right: 50px;
     padding: 20px; /* Adjust padding as needed */
-  
   }
-  
   .project-data-container.visible {
     display: block;
     animation: slide-up 0.5s ease-in-out;
   }
-  
-  
-  .P_Title {
-    color: red;
+}
+
+/* keyframes */
+@keyframes slide-up {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+}
+
+@keyframes imageAnimation {
+  0%, 20% {
+    opacity: 0;
   }
+  25%, 100% {
+    opacity: 1;
+  }
+}
+ 
