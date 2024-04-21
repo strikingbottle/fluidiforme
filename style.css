@@ -1,5 +1,4 @@
-/* Common style*/
-
+/* Common style */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -26,9 +25,9 @@ header {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Optional: Add a box shadow */
 }
 
-/* Style for mobile*/
+/* Style for mobile */
 @media (max-width: 999px) {
-  /*Rules for NavBar*/
+  /* Rules for NavBar */
   nav {
     width: 90%;
     display: grid;
@@ -52,7 +51,7 @@ header {
   nav a:hover {
     background-color: #555;
   }
-  /*Rules for slide-up effect on click and main containers*/
+  /* Rules for slide-up effect on click and main containers */
   .slide-up-container.show {
     display: block;
     animation: slide-up 0.5s ease-in-out;
@@ -67,7 +66,7 @@ header {
     width: 100%;
     height: 100%;
   }
-  /*Rules for Main Content*/
+  /* Rules for Main Content */
   .main-content {
     position: absolute;
     top: 10;
@@ -75,11 +74,11 @@ header {
     height: 100%;
     width: 100%;
   }
-  /*Rules to slideshow in homepage*/
+  /* Rules for slideshow in homepage */
   .main-content img {
     width: 100%; /* Adjust based on your layout */
     height: auto; /* Maintain aspect ratio */
-    display: none; /* Hide all images initially */
+    display: none; /* Hide all images initially */ 
     position: absolute; /* Overlay images on top of each other */
     top: 0;
     left: 0;
@@ -89,26 +88,28 @@ header {
     display: block; /* Show the first image by default */
   }
 
-  /*Rules for about page impagina correttamente il contenuto di about sovrascrivendo la width */
-  #aboutContent{
+  /* Rules for about page */
+  #aboutContent {
     width: auto;
   }
-  /*Rules for Projects Page*/
-  .projectsMenu{
+  /* Rules for Projects Page */
+  .projectsMenu {
     display: none;
   }
+
   #show.projectsMenu {
     display: block;
     animation: slide-up 0.5s ease-in-out;
-    /*regole per il display grid*/
+    /* Rules for display grid */
     display: grid;
     grid-template-columns: 1fr 1fr 1fr; 
     gap: 20px; /* Spazio tra le colonne */
     justify-content: center;
     align-items: center;
-    width: 95%
+    width: 95%;
   }
   .projectsMenu a {
+    font-size: 52px; /* Adjust the font size as needed */
     display: flex; /* Use flexbox for centering */
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
@@ -136,9 +137,10 @@ header {
     animation: slide-up 0.5s ease-in-out;
   }
 }
-/* Style for desktop*/
+
+/* Style for desktop */
 @media (min-width: 1000px) {
-  /*Rules for NavBar*/
+  /* Rules for NavBar */
   nav {
     background-color: #444;
     border-radius: 10px;
@@ -162,10 +164,10 @@ header {
     background-color: #555;
   }
 
-  /*Rules for slide-up effect on click and main containers*/
+  /* Rules for slide-up effect on click and main containers */
   .slide-up-container.show {
-  display: block;
-  animation: slide-up 0.5s ease-in-out;
+    display: block;
+    animation: slide-up 0.5s ease-in-out;
   }
   .slide-up-content {
     margin-top: 40px; /* Adjust to match header height */
@@ -177,47 +179,47 @@ header {
     height: 100%;
   }
 
-  /*Rules for homepage behaviour*/
+  /* Rules for homepage behaviour */
   .draggable {
     cursor: move;
     /* Images dimensions are changed here */
     width: 300px; /* Adjust the width */
     height: auto; /* Maintain aspect ratio */
   }
-  /*Rules for Projects Page behaviour*/
+  /* Rules for Projects Page behaviour */
   .main-content {
     position: absolute;
     top: 10;
     left: 0;
     width: 100%;
     height: 100%;
-    /*regole per Projects*/
+    /* Rules for Projects */
     display: grid;
     grid-template-columns: 1fr 3fr; 
     gap: 20px; /* Spazio tra le colonne */
-    overflow: auto;/*Abilita lo scroll*/
+    overflow: auto; /* Abilita lo scroll */
   }
-  .left-column{
+  .left-column {
     margin-right: 20px;
+    font-size: 52px; /* Adjust the font size as needed */
   }
   .right-column {
     overflow-y: scroll; /* Enable vertical scrolling */
     margin-right: px;
     scroll-snap-type: y mandatory; /* Snap to each block when scrolling */
   }
-  .projectsMenu{
+  .projectsMenu {
     position: fixed;
     bottom: 100px;
     left: 30px;
     padding: 10px;
-
   }
   .projectsMenu a {
-    font-size: medium;
+    font-size: 32px;
     color: black;
     text-decoration: none;
     margin-bottom: 10px; /* Add margin between menu items */
-    display: block
+    display: block;
   }
   .project-data-container {
     background-color: #f1f1f1;
@@ -250,4 +252,3 @@ header {
     opacity: 1;
   }
 }
- 
