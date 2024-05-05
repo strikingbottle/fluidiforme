@@ -80,8 +80,9 @@ div.project-data-container img {
   }
   /* Rules for slideshow in homepage */
   .main-content img {
-    width: 90%; /* Adjust based on your layout */
-    height: auto; /* Maintain aspect ratio */
+    width: 90%;
+    height: 90%;  /* Adjusts the height to take up the remaining viewable area */
+    object-fit: cover; /* This property makes the image cover the given dimension, similar to background-size: cover; */
     display: none; /* Hide all images initially */ 
     position: absolute; /* Overlay images on top of each other */
     top: 2% !important;
@@ -106,7 +107,25 @@ div.project-data-container img {
     animation: slide-up 0.5s ease-in-out;
   }
 
-  .projectsMenu a {
+  /* Rules for Main Content */
+  .copertina {
+    position: absolute;
+    top: 10;
+    left: 0;
+    height: 70vh;
+    width: auto;
+  }
+  /* Rules for slideshow in homepage */
+  .copertina img {
+    width: 90%;
+    height: 90%;  /* Adjusts the height to take up the remaining viewable area */
+    object-fit: cover; /* This property makes the image cover the given dimension, similar to background-size: cover; */
+    display: none; /* Hide all images initially */ 
+    position: absolute; /* Overlay images on top of each other */
+    top: 2% !important;
+    left: 5% !important;
+  }
+    .projectsMenu a {
     text-align: center;
     display: block;
     margin-top: 15px;
