@@ -198,6 +198,10 @@ div.project-data-container img {
   }
 
   /* Rules for homepage behaviour */
+  #homeContent {
+    width: 100%;
+    height: 100%;
+  }
   .draggable {
     cursor: move;
     /* Images dimensions are changed here */
