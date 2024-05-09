@@ -201,7 +201,7 @@ div.project-data-container img {
   .draggable {
     cursor: move;
     /* Images dimensions are changed here */
-    width: 300px; /* Adjust the width */
+    width: 18%; /* Adjust the width */
     height: auto; /* Maintain aspect ratio */
   }
   /* Rules for Projects Page behaviour */
