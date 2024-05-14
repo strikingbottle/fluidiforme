@@ -67,8 +67,8 @@ $(document).ready(function(){
   const W = mainContent.offsetWidth;
   const H = mainContent.offsetHeight;
   images.forEach(image => {
-    const randH = Math.floor(Math.random() * (H - 100)) + 'px';
-    const randW = Math.floor(Math.random() * (W - 100)) + 'px';
+    const randH = Math.floor(Math.random() * (H - image.height - 100)) + 'px';
+    const randW = Math.floor(Math.random() * (W - image.width - 100)) + 'px';
     image.style.position = 'absolute';
     image.style.top = randH;
     image.style.left=  randW;
@@ -125,7 +125,7 @@ $(document).ready(function() {
     let currentIndex = 0;
     const images = $('.main-content img');
     const totalImages = images.length - 1;
-    console.log(totalImages);
+    
     function changeImage() {
       // Fade out the current image
       $(images[currentIndex]).fadeOut(500, function() {
@@ -135,7 +135,9 @@ $(document).ready(function() {
         $(images[currentIndex]).fadeIn(500);
       });
     }
-    // Change image every 3 seconds
-    setInterval(changeImage, 3000);
+    // Change image on tap
+    $('.main-content').on('click', function() {
+      changeImage();
+    });
   }
 });
