@@ -122,17 +122,17 @@ window.addEventListener('scroll', function() {
 //Funzione per slideshow delle immagini nella home
 $(document).ready(function() {
   if(window.innerWidth < 1000){
-    let currentIndex = 0;
+    let index = 0;
     const images = $('.main-content img');
     const totalImages = images.length - 1;
     
     function changeImage() {
       // Fade out the current image
-      $(images[currentIndex]).fadeOut(500, function() {
+      $(images[index]).fadeOut(500, function() {
         // Increment the index. If it's the last image, reset to 0
-        currentIndex = (currentIndex + 1) % totalImages; // Move to the next image, loop back to the first at the end
+        index = (index + 1) % totalImages; // Move to the next image, loop back to the first at the end
         // Ensure the next image (or first if we've looped around) is shown
-        $(images[currentIndex]).fadeIn(500);
+        $(images[index]).fadeIn(500);
       });
     }
     // Change image on tap
