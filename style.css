@@ -82,7 +82,7 @@ div.project-data-container img {
   .main-content img {
     width: 100vw;
     height: 106vh;  /* Adjusts the height to take up the remaining viewable area */
-    object-fit: fill; /* This property makes the image cover the given dimension, similar to background-size: cover; */
+    object-fit: cover; /* This property makes the image cover the given dimension, similar to background-size: cover; */
     display: none; /* Hide all images initially */ 
     position: absolute; /* Overlay images on top of each other */
     top: -6% !important;
@@ -229,7 +229,7 @@ div.project-data-container img {
   }
   .left-column {
     margin-right: 20px;
-    font-size: 52px; /* Adjust the font size as needed */
+    font-size: 27px; /* Adjust the font size as needed */
   }
   .right-column {
     overflow-y: scroll; /* Enable vertical scrolling */
