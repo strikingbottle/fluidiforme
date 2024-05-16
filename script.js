@@ -2,9 +2,13 @@
 function showContent(content) {
   $('.slide-up-container').removeClass('show');
   $('#' + content + 'Container').addClass('show');
-  if(content === 'projects' && window.innerWidth < 1000){
-    $('.projectsMenu').attr('id', 'show');
+  if(content === 'projects'){
     $('.project-data-container').removeClass('visible');
+    $('#' + 'default-project').addClass('visible');
+    if(window.innerWidth < 1000){
+      $('.project-data-container').removeClass('visible');
+      $('.projectsMenu').attr('id', 'show');
+    }
   }
 }
 //Questa funzione mostra il progetto selezionato 
