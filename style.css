@@ -142,17 +142,16 @@ div.project-data-container img {
  
   .project-data-container {
     background-color: #f1f1f1;
-    overflow: hidden;
     display: none;
-    margin-right: 50px;
+    overflow-y: scroll;
+    scrollbar-color: transparent transparent;
     padding: 20px; /* Adjust padding as needed */
+    height: 100vh;
   }
   .project-data-container.visible {
     display: block;
     animation: slide-up 0.5s ease-in-out;
-  }
-  .right-column{
-    overflow-y: scroll; /*Attenzione questa regola dovrà essere rimossa per implementare il comportamento richiesto all'interno del progetto*/
+    overflow-y: auto;
   }
 }
 
