@@ -1,6 +1,8 @@
 /* Common style */
+
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'fLuidiforme-helvetica', sans-serif;
   margin: 0;
   padding: 0;
   overflow: hidden; /* Prevent scrolling during animation */
@@ -205,7 +207,7 @@ div.project-data-container img {
   .draggable {
     cursor: move;
     /* Images dimensions are changed here */
-    width: 18%; /* Adjust the width */
+    width: 28%; /* Adjust the width */
     height: auto; /* Maintain aspect ratio */
   }
   /* Rules for Projects Page behaviour */
@@ -280,4 +282,11 @@ div.project-data-container img {
   25%, 100% {
     opacity: 1;
   }
+}
+
+@font-face {
+  font-family: 'fluidiforme-helvetica';
+  src: url('fonts/font.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
 }
