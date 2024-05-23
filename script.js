@@ -11,6 +11,7 @@ function showContent(content) {
     }
   }
 }
+
 //Questa funzione mostra il progetto selezionato 
 function showProject(p){
   $('.project-data-container').removeClass('visible');
@@ -22,48 +23,7 @@ function showProject(p){
   }
 }
 
-// questa funzione é da rifare, una singola funzione non puó occuparsi di tutto
-function generateImages() {
-  const mainContent = document.getElementById('main-content');
-  const contentWidth = mainContent.offsetWidth;
-  const contentHeight = mainContent.offsetHeight;
-  
-  for (let i = 1; i <= 9; i++) {
-    const img = document.createElement('img');
-    const imageNumber = i.toString().padStart(2, '0');
-    img.src = `images/FF_${imageNumber}.png`;
-    img.alt = `Image ${i}`;
-    img.classList.add('draggable');
-    
-    const randomTop = Math.floor(Math.random() * (contentHeight - 100)) + 'px'; // Adjusted for spacing
-    const randomLeft = Math.floor(Math.random() * (contentWidth - 100)) + 'px'; // Adjusted for spacing
-    
-    img.style.position = 'absolute';
-    img.style.top = randomTop;
-    img.style.left = randomLeft;
-    
-    let highestZIndex = 1; // Initialize the highest z-index
-    img.addEventListener('click', function() {
-      // Increment the highest z-index and assign it to the clicked image
-      highestZIndex++;
-      img.style.zIndex = highestZIndex;
-  
-      // Lower the z-index of all other images
-      document.querySelectorAll('.draggable').forEach(otherImg => {
-          if (otherImg !== img) {
-                otherImg.style.zIndex = otherImg.style.zIndex > 1 ? otherImg.style.zIndex - 1 : 1;
-            }
-        });
-    });
-
-    mainContent.appendChild(img);
-    $(img).draggable({
-        containment: 'parent'
-    });
-    }
-}
-
-// Riposizionamento immagini
+//Riposizionamento immagini
 //questa funzione riposiziona in modo casuale tutte le immagini all'interno del main content
 const mainContent = document.getElementById('main-content');
 const images =  document.querySelectorAll('.draggable');
@@ -78,6 +38,7 @@ $(document).ready(function(){
     image.style.left=  randW;
   })
 })
+
 // Re-initialize draggable functionality for new images
 // Rende le immagini trascinabili all'interno del loro contenitore
 $('.draggable').draggable({
@@ -97,18 +58,6 @@ $('.draggable').draggable({
   }
 });
 
-
-  
-
-// Call generateImages function when the document is ready
-/*
-jQuery(document).ready(function($) {
-  generateImages();
-});
-*/
-
-
-
 //A che serve questo
 const sections = document.querySelectorAll('.section');
 window.addEventListener('scroll', function() {
@@ -122,7 +71,6 @@ window.addEventListener('scroll', function() {
   });
 });
 
-
 //Funzione per slideshow delle immagini nella home
 $(document).ready(function() {
   if(window.innerWidth < 1000){
@@ -132,11 +80,11 @@ $(document).ready(function() {
     
     function changeImage() {
       // Fade out the current image
-      $(images[index]).fadeOut(500, function() {
+      $(images[index]).fadeOut(1, function() {
         // Increment the index. If it's the last image, reset to 0
         index = (index + 1) % totalImages; // Move to the next image, loop back to the first at the end
         // Ensure the next image (or first if we've looped around) is shown
-        $(images[index]).fadeIn(500);
+        $(images[index]).fadeIn(1);
       });
     }
     // Change image on tap
