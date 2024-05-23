@@ -119,7 +119,7 @@ div.project-data-container img {
     position: absolute;
     top: 10;
     left: 0;
-    height: 70vh;
+    height: 100vh;
     width: auto;
   }
   /* Rules for slideshow in homepage */
@@ -151,7 +151,7 @@ div.project-data-container img {
     overflow-y: scroll;
     scrollbar-color: transparent transparent;
     padding: 20px; /* Adjust padding as needed */
-    height: 70vh;
+    height: 99vh;
   }
   .project-data-container.visible {
     display: block;
@@ -276,15 +276,6 @@ div.project-data-container img {
     to {
       transform: translateY(0);
     }
-}
-
-@keyframes imageAnimation {
-  0%, 1% {
-    display: none;
-  }
-  5%, 100% {
-    display: block;
-  }
 }
 
 @font-face {
