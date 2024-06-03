@@ -51,7 +51,6 @@ div.project-data-container img {
     text-align: center;
     color: #fff;
     text-decoration: none;
-    display: flex;
     border-radius: 10px;
     padding: 10px 20px; /* Increase padding to give more space */
     white-space: nowrap; /* Prevent text from wrapping */
