@@ -1,3 +1,151 @@
+// Dichiarazione Variabili
+
+let progetti = null;
+let images = [];
+const mainContent = document.getElementById('main-content');//importante, non rimuovere
+
+
+//definizione funzioni
+async function getJson(){
+  const d = await fetch('/progetti.json');
+  progetti = await d.json();
+}
+
+//change image on tap for mobile
+function mobileVersion(){
+  let index = 0;
+  const totalImages = images.length - 1;
+  function changeImage() {
+    $(images[index]).fadeOut(1, function() {
+      index = (index + 1) % totalImages;
+      $(images[index]).fadeIn(1);
+    });
+  }
+  $('.main-content').on('click', function() {
+    changeImage();
+  });
+}
+
+//Porta in cima l'ultima immagine cliccata
+// questa funzione è da rivedere
+function bringOn(){
+  $('.draggable').draggable({
+    start: function(event, ui) {
+      var maxZIndex = 0;
+      console.log('la funzione inizia')
+      $('.draggable').each(function() {
+        var zIndex = parseInt($(this).css('z-index'));
+        if (!isNaN(zIndex) && zIndex > maxZIndex) {
+          console.log("cambiando indice")
+          maxZIndex = zIndex;
+          console.log(maxZIndex);
+        }
+      });
+      $(this).css('z-index', maxZIndex + 1);
+    }
+  });
+}
+
+
+function fadeImage(img) {
+  let opacity = 0;
+  function updateOpacity() {
+    opacity += 0.05;
+    if (opacity >= 1) {
+      opacity = 1;
+    }
+    img.style.opacity = opacity;
+    if (opacity < 1) {
+      requestAnimationFrame(updateOpacity);
+    }
+  }
+  updateOpacity();
+}
+
+
+//add an image every time the user click on main content
+function showImages(){
+  let index = 1;
+  const totalImages = images.length - 1;
+  function appendImage() {
+    if(index < totalImages){
+      console.log(images[index]);
+      images[index].style.zIndex = index;
+      //images[index].style.opacity = 0;
+      mainContent.appendChild(images[index]);
+      //fadeImage(images[index]);
+      index++;
+    }
+  }
+  $('.main-content').on('click', function() {
+    appendImage();
+  });
+}
+
+
+//questa funzione gestisce tutta la parte delle immagini
+async function generaImmagini(){
+  await getJson();
+
+  if(window.innerWidth < 1000){
+    progetti.forEach(progetto => {
+      //tutta questa parte può essere incapsulata in delle funzioni per rendere lo script più leggibile
+      const img = document.createElement('img');
+      img.src = progetto.copertina;
+      img.alt = progetto.titolo;
+      mainContent.appendChild(img);
+      images.push(img);
+    });
+    mobileVersion();
+  }else{
+    let n = 0;
+    progetti.forEach(progetto => {
+      //tutta questa parte può essere incapsulata in delle funzioni per rendere lo script più leggibile
+      const img = document.createElement('img');
+      img.src = progetto.copertina;
+      img.alt = progetto.titolo;
+      img.classList.add('draggable');
+      
+      $(img).draggable({
+        containment: 'parent'
+      });
+      img.style.top = 0;
+      img.style.left = 0;
+      img.width = mainContent.offsetWidth * 0.28;
+      const randH = Math.floor(Math.random() * 100000 % (mainContent.offsetHeight - 2*img.width)) + 'px';
+      const randW = Math.floor(Math.random() * (mainContent.offsetWidth - img.width - 100)) + 'px';
+      img.style.position = 'absolute';
+      img.style.top = randH;
+      img.style.left = randW;
+      images.push(img);
+      if(n == 0){
+        mainContent.appendChild(img);
+        n=1;
+      }
+    });
+    showImages();
+
+  }
+  console.log("fine lettura json e creazione immagini");
+}
+
+$(document).ready(function() {
+  generaImmagini();
+  bringOn();
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
 // Function to show content based on menu click
 function showContent(content) {
   $('.slide-up-container').removeClass('show');
@@ -22,74 +170,3 @@ function showProject(p){
     $('#' + p + '-container').addClass('visible');
   }
 }
-
-//Riposizionamento immagini
-//questa funzione riposiziona in modo casuale tutte le immagini all'interno del main content
-const mainContent = document.getElementById('main-content');
-const images =  document.querySelectorAll('.draggable');
-$(document).ready(function(){
-  const W = mainContent.offsetWidth;
-  const H = mainContent.offsetHeight;
-  images.forEach(image => {
-    const randH = Math.floor(Math.random() * (H - image.height - 100)) + 'px';
-    const randW = Math.floor(Math.random() * (W - image.width - 100)) + 'px';
-    image.style.position = 'absolute';
-    image.style.top = randH;
-    image.style.left=  randW;
-  })
-})
-
-// Re-initialize draggable functionality for new images
-// Rende le immagini trascinabili all'interno del loro contenitore
-$('.draggable').draggable({
-  containment: 'parent'
-});
-
-$('.draggable').draggable({
-  start: function(event, ui) {
-    var maxZIndex = 0;
-    $('.draggable').each(function() {
-      var zIndex = parseInt($(this).css('z-index'));
-      if (!isNaN(zIndex) && zIndex > maxZIndex) {
-        maxZIndex = zIndex;
-      }
-    });
-    $(this).css('z-index', maxZIndex + 1);
-  }
-});
-
-//A che serve questo
-const sections = document.querySelectorAll('.section');
-window.addEventListener('scroll', function() {
-  sections.forEach(section => {
-    const rect = section.getBoundingClientRect();
-    if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
-        section.style.display = 'block';
-    } else {
-        section.style.display = 'none';
-    }
-  });
-});
-
-//Funzione per slideshow delle immagini nella home
-$(document).ready(function() {
-  if(window.innerWidth < 1000){
-    let index = 0;
-    const images = $('.main-content img');
-    const totalImages = images.length - 1;
-    
-    function changeImage() {
-      // Fade out the current image
-      $(images[index]).fadeOut(1, function() {
-        // Increment the index. If it's the last image, reset to 0
-        index = (index + 1) % totalImages; // Move to the next image, loop back to the first at the end
-        // Ensure the next image (or first if we've looped around) is shown
-        $(images[index]).fadeIn(1);
-      });
-    }
-    // Change image on tap
-    $('.main-content').on('click', function() {
-      changeImage();
-    });
-  }
-});

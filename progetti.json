@@ -1,23 +1,79 @@
-{
-    "progetti": [
-      {
-        "titolo": "Progetto 1",
-        "copertina": "/percorso/immagine1.jpg",
-        "testo": "Testo del Progetto 1...",
-        "slideshow": "/percorso/slideshow1/"
-      },
-      {
-        "titolo": "Progetto 2",
-        "copertina": "/percorso/immagine2.jpg",
-        "testo": "Testo del Progetto 2...",
-        "slideshow": "/percorso/slideshow2/"
-      },
-      {
-        "titolo": "Progetto 3",
-        "copertina": "/percorso/immagine3.jpg",
-        "testo": "Testo del Progetto 3...",
-        "slideshow": "/percorso/slideshow3/"
-      }
-    ]
+[
+  {
+    "titolo": "Hangar Ticinum",
+    "descrizione":"Competition, Pavia, 2020",
+    "copertina": "images/FF_01.png",
+    "testo": "Testo del Progetto 1...",
+    "immagini": "projects/HangarTicinum/"
+  },
+  {
+    "titolo": "Flanerie",
+    "descrizione":"Premio Federico Maggia, Biella, 2021",
+    "copertina": "images/FF_02.png",
+    "testo": "Testo del Progetto 1...",
+    "immagini": "projects/Flanerie/"
+  },
+  {
+    "titolo": "Petraro",
+    "descrizione":"Private housing, Soverato, 2021",
+    "copertina": "images/FF_03.png",
+    "testo": "Testo del Progetto 1...",
+    "immagini": "projects/Petraro/"
+  },
+  {
+    "titolo": "Museo della Scienza",
+    "descrizione":"Competition, Rome, 2022",
+    "copertina": "images/FF_04.png",
+    "testo": "Testo del Progetto 1...",
+    "immagini": "projects/MuseoScienza/"
+  },
+  {
+    "titolo": "Density: Mode d'emploi",
+    "descrizione":"Competition, Tilburg, 2023",
+    "copertina": "images/FF_05.png",
+    "testo": "Testo del Progetto 1...",
+    "immagini": "projects/Density/"
+  },
+  {
+    "titolo": "Housing Block",
+    "descrizione":"Ongoing, Montauro, 2023",
+    "copertina": "images/FF_06.png",
+    "testo": "Testo del Progetto 1...",
+    "immagini": "projects/HousingBlock/"
+  },
+  {
+    "titolo": "Casa di cura",
+    "descrizione":"Competition, Falzes, 2023",
+    "copertina": "images/FF_07.png",
+    "testo": "Testo del Progetto 1...",
+    "immagini": "projects/Casadicura/"
+  },
+  {
+    "titolo": "Raw Cloud",
+    "descrizione":"Mialn Design Week, Milan, 2024",
+    "copertina": "images/FF_08.png",
+    "testo": "Testo del Progetto 1...",
+    "immagini": "projects/RawCloud/"
+  },
+  {
+    "titolo": "Manifattura Tabacchi Torino",
+    "descrizione":"Competition, Turin, 2024",
+    "copertina": "images/FF_09.png",
+    "testo": "Testo del Progetto 1...",
+    "immagini": "projects/ManifatturaTabacchi/"
+  },
+  {
+    "titolo": "Tetralogia Urbana",
+    "descrizione":"Competition, Padova, 2024",
+    "copertina": "",
+    "testo": "Testo del Progetto 1...",
+    "immagini": "projects/TetralogiaUrbana/"
+  },
+  {
+    "titolo": "XXX",
+    "descrizione":"Competition, Turin, 2024",
+    "copertina": "",
+    "testo": "Testo del Progetto 1...",
+    "immagini": "projects/XXX/"
   }
-  
+]

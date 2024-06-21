@@ -131,32 +131,35 @@ div.project-data-container img {
     top: 2% !important;
     left: 5% !important;
   }
-    .projectsMenu a {
+  .projectsMenu a {
     text-align: center;
     display: block;
     margin-top: 15px;
     text-decoration: none;
     color: #333; /* Cambia colore testo a tuo piacimento */
   }
-  .projectsMenu a:hover {
-    background-color: #fff;
-    color: #fff;
-    transition: background-color 0.5s ease;
+  a p{
+    padding: 0;
+    margin: 0;
+    font-family: Arial, sans-serif; /* Imposta il font per i paragrafi all'interno di collegamenti */
+    font-size: 16px; /* Imposta la dimensione del font per i paragrafi all'interno di collegamenti */
+    color: grey; /* Imposta il colore del testo per i paragrafi all'interno di collegamenti */
   }
- 
+
   .project-data-container {
     background-color: #fff;
     display: none;
     overflow-y: scroll;
     scrollbar-color: transparent transparent;
     padding: 20px; /* Adjust padding as needed */
-    height: 99vh;
+    height: 90vh;
   }
   .project-data-container.visible {
     display: block;
     animation: slide-up 0.5s ease-in-out;
     overflow-y: auto;
   }
+
 }
 
 /*********************/
@@ -209,9 +212,6 @@ div.project-data-container img {
   }
   .draggable {
     cursor: move;
-    /* Images dimensions are changed here */
-    width: 28%; /* Adjust the width */
-    height: auto; /* Maintain aspect ratio */
   }
   /* Rules for Projects Page behaviour */
   .main-content {
@@ -252,6 +252,13 @@ div.project-data-container img {
     text-decoration: none;
     margin-bottom: 10px; /* Add margin between menu items */
     display: block;
+  }
+  a p{
+    padding: 0;
+    margin: 0;
+    font-family: Arial, sans-serif; /* Imposta il font per i paragrafi all'interno di collegamenti */
+    font-size: 16px; /* Imposta la dimensione del font per i paragrafi all'interno di collegamenti */
+    color: grey; /* Imposta il colore del testo per i paragrafi all'interno di collegamenti */
   }
   .project-data-container {
     overflow: hidden;
