@@ -150,7 +150,6 @@ div.project-data-container img {
     background-color: #fff;
     display: none;
     overflow-y: scroll;
-    scrollbar-color: transparent transparent;
     padding: 20px; /* Adjust padding as needed */
     height: 90vh;
   }
@@ -158,13 +157,6 @@ div.project-data-container img {
     display: block;
     animation: slide-up 0.5s ease-in-out;
     overflow-y: auto;
-  }
-  #aboutContent p{
-    padding: 0;
-    margin: 0;
-    font-family: Arial, sans-serif; /* Imposta il font per i paragrafi all'interno di collegamenti */
-    font-size: 16px; /* Imposta la dimensione del font per i paragrafi all'interno di collegamenti */
-    color: grey; /* Imposta il colore del testo per i paragrafi all'interno di collegamenti */
   }
 }
 
@@ -203,19 +195,14 @@ div.project-data-container img {
   }
   .slide-up-content {
     margin-top: 40px;
-    padding: 20px;
+    padding: 2%;
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-  }
+    width: 96%;
+    height: 96%;
+}
 
-  /* Rules for homepage behaviour */
-  #homeContent {
-    width: 100%;
-    height: 100%;
-  }
   .draggable {
     cursor: move;
   }
@@ -230,7 +217,7 @@ div.project-data-container img {
   .project-container{
     display: grid;
     grid-template-columns: 1fr 3fr; 
-    gap: 20px; /* Spazi tra le colonne */
+    gap: 20px;
     position: absolute;
     top: 10;
     left: 0;
@@ -239,18 +226,15 @@ div.project-data-container img {
     overflow: auto; /* Abilita lo scroll */
   }
   .left-column {
-    margin-right: 20px;
-    font-size: 27px; /* Adjust the font size as needed */
+    overflow-y:scroll;
   }
   .right-column {
     overflow-y: scroll; /* Enable vertical scrolling */
-    /*scroll-snap-type: y mandatory; /* Snap to each block when scrolling */
   }
+
   .projectsMenu {
-    position: fixed;
-    bottom: 100px;
-    left: 30px;
     padding: 10px;
+    margin-bottom: 70px;/* questo margine serve a compensare la sfasatura dovuta al margin top e al padding di slideup-content */
   }
   .projectsMenu a {
     font-size: 20px;
@@ -269,7 +253,6 @@ div.project-data-container img {
   .project-data-container {
     overflow: hidden;
     display: none;
-    margin-right: 50px;
     padding: 20px 20px 100px; /* Adjust padding as needed */
     /*importante, il padding bottom(terzo valore può servire per about ecc*/
   }
@@ -277,9 +260,22 @@ div.project-data-container img {
     display: block;
     animation: slide-up 0.5s ease-in-out;
   }
-
-  
 }
+
+#aboutContent p{
+  padding: 0;
+  margin: 0;
+  font-family: Arial, sans-serif; /* Imposta il font per i paragrafi all'interno di collegamenti */
+  font-size: 16px; /* Imposta la dimensione del font per i paragrafi all'interno di collegamenti */
+  color: grey; /* Imposta il colore del testo per i paragrafi all'interno di collegamenti */
+}
+.left-column::-webkit-scrollbar { /* hides scrollbar */
+  display: none;
+}
+.right-column::-webkit-scrollbar {
+  display: none;
+}
+
 
 /* keyframes */
 @keyframes slide-up {
