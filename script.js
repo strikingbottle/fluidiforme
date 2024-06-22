@@ -8,15 +8,15 @@ const mainContent = document.getElementById('main-content');//importante, non ri
 //definizione funzioni
 
 /* funzione per ambiente di test */
-/* async function getJson(){
+async function getJson(){
   const d = await fetch('/progetti.json');
   progetti = await d.json();
-} */
+}
 
-async function getJson(){
+/* async function getJson(){
   const d = await fetch('https://www.fluidiforme.eu/sito-wp/progetti.json');
   progetti = await d.json();
-}
+} */
 
 //change image on tap for mobile
 function mobileVersion(){
@@ -39,13 +39,10 @@ function bringOn(){
   $('.draggable').draggable({
     start: function(event, ui) {
       var maxZIndex = 0;
-      console.log('la funzione inizia')
       $('.draggable').each(function() {
         var zIndex = parseInt($(this).css('z-index'));
         if (!isNaN(zIndex) && zIndex > maxZIndex) {
-          console.log("cambiando indice")
           maxZIndex = zIndex;
-          console.log(maxZIndex);
         }
       });
       $(this).css('z-index', maxZIndex + 1);
@@ -69,15 +66,27 @@ function fadeImage(img) {
   updateOpacity();
 }
 
+function getMaxZ() {
+  let maxIndex= 0;
+  images.forEach(image => {
+    if(image.style.zIndex != NaN && image.style.zIndex > maxIndex)
+      maxIndex = parseInt(image.style.zIndex) + 1;
+  })
+  console.log('ActualMax', maxIndex)
+  return maxIndex;
+}
 
 //add an image every time the user click on main content
 function showImages(){
   let index = 1;
   const totalImages = images.length - 1;
+
+
+
   function appendImage() {
     if(index < totalImages){
-      console.log(images[index]);
-      images[index].style.zIndex = index;
+      
+      images[index].style.zIndex = parseInt(getMaxZ()) + 1;
       //images[index].style.opacity = 0;
       mainContent.appendChild(images[index]);
       //fadeImage(images[index]);
@@ -86,9 +95,10 @@ function showImages(){
   }
   $('.main-content').on('click', function() {
     appendImage();
+    bringOn();
   });
+ 
 }
-
 
 //questa funzione gestisce tutta la parte delle immagini
 async function generaImmagini(){
@@ -138,8 +148,6 @@ async function generaImmagini(){
 
 $(document).ready(function() {
   generaImmagini();
-  bringOn();
-
 });
 
 
