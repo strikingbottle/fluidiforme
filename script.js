@@ -6,8 +6,15 @@ const mainContent = document.getElementById('main-content');//importante, non ri
 
 
 //definizione funzioni
-async function getJson(){
+
+/* funzione per ambiente di test */
+/* async function getJson(){
   const d = await fetch('/progetti.json');
+  progetti = await d.json();
+} */
+
+async function getJson(){
+  const d = await fetch('https://www.fluidiforme.eu/sito-wp/progetti.json');
   progetti = await d.json();
 }
 
