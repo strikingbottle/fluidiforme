@@ -3,77 +3,223 @@
     "titolo": "Hangar Ticinum",
     "descrizione":"Competition, Pavia, 2020",
     "copertina": "images/FF_01.png",
-    "testo": "Testo del Progetto 1...",
-    "immagini": "projects/HangarTicinum/"
+    "immagini": [
+      "projects/HangarTicinum/X2.png",
+      "projects/HangarTicinum/X3.png",
+      "projects/HangarTicinum/X4.png",
+      "projects/HangarTicinum/X5.png",
+      "projects/HangarTicinum/X6.png",
+      "projects/HangarTicinum/X7.png"
+    ],
+    "cliente":"TerraViva Competitions",
+    "status":"Competition - <b>Honorable Mention</b>",
+    "program":"Community Hub",
+    "info":"Pavia (IT), 2021",
+    "team":"Fluidiforme (Antonino Caridi, Davide Casaletto), Gianluca Basile",
+    "testo": "The project is based on a dualistic design approach: on one side, the aim to preserve the tectonics of the Hangar and its rigid concrete grid; on the other side, the triggering of three tools: tower, tunnel, and platform. \n\n The central part corresponds to the heart of the project and it’s where all the main functions are placed. The new polycarbonate panels can be opened according to the hangars’ openings, and they spread the light like a lantern on the waters of Ticino river. Instead, the last span totally lists its materiality because the original facade is substituted by glass panels that open the view on the countryside."
+
   },
   {
     "titolo": "Flanerie",
     "descrizione":"Premio Federico Maggia, Biella, 2021",
     "copertina": "images/FF_02.png",
-    "testo": "Testo del Progetto 1...",
-    "immagini": "projects/Flanerie/"
+    "immagini": [
+      "projects/Flanerie/X9.png",
+      "projects/Flanerie/X10.png",
+      "projects/Flanerie/X11.png",
+      "projects/Flanerie/X12.png",
+      "projects/Flanerie/X13.png",
+      "projects/Flanerie/X14.png",
+      "projects/Flanerie/X15.png",
+      "projects/Flanerie/X16.png"
+    ],
+    "cliente":"Premio Federivo Maggia",
+    "status":"Built",
+    "program":"Installation",
+    "info":"Biella (IT), 2022",
+    "team":"Fluidiforme (Antonino Caridi, Davide Casaletto), Lorenzo Della Rosa, Matteo De Zardo, Iacopo Predieri",
+    "testo": "Flânerie is an open work that focuses on the experience - unique and free - of the subject, using architecture as a tool to educate to the complexity and plurality of experiences.\nFlânerie is the exasperation of division: it is learning through the discovery of the void.\n\nThe project is based on a dualistic design approach: on one side, the aim to preserve the tectonics of the Hangar and its rigid concrete grid; on the other side, the triggering of three tools: tower, tunnel, and platform. \n\nThe central part corresponds to the heart of the project and it’s where all the main functions are placed. The new polycarbonate panels can be opened according to the hangars’ openings, and they spread the light like a lantern on the waters of Ticino river. Instead, the last span totally lists its materiality because the original facade is substituted by glass panels that open the view on the countryside."
   },
   {
     "titolo": "Petraro",
     "descrizione":"Private housing, Soverato, 2021",
     "copertina": "images/FF_03.png",
-    "testo": "Testo del Progetto 1...",
-    "immagini": "projects/Petraro/"
+    "immagini": [
+      "projects/Petraro/X18.png",
+      "projects/Petraro/X19.png",
+      "projects/Petraro/X20.png",
+      "projects/Petraro/X21.png",
+      "projects/Petraro/X22.png",
+      "projects/Petraro/X23.png"
+    ],
+    "cliente":"Private",
+    "status":"Built",
+    "program":"Housing",
+    "info":"Gasperina (IT), 2021",
+    "team":"Fluidiforme (Antonino Caridi, Davide Casaletto), Arch. G. Raynal ",
+    "testo": "Petraro is a private commission we have dealt with in an aranceto in South of Italy, integrating a pre-existing crusher from 1800.\n\nThe client required a flexible space for guests with a spa, a bed and a private bathroom. The space is organised along a block of services located in the back (toilets, closet and mechanical) and a main free space with costumed millwork facing the aranceto and the sea.\n\nThe dependence has a timber structure with natural wooden cladding and big openings towards the South."
   },
   {
     "titolo": "Museo della Scienza",
     "descrizione":"Competition, Rome, 2022",
     "copertina": "images/FF_04.png",
-    "testo": "Testo del Progetto 1...",
-    "immagini": "projects/MuseoScienza/"
+    "immagini": [
+      "projects/MuseoScienza/X25.png",
+      "projects/MuseoScienza/X26.png",
+      "projects/MuseoScienza/X27.png",
+      "projects/MuseoScienza/X28.png",
+      "projects/MuseoScienza/X29.png",
+      "projects/MuseoScienza/X30.png",
+      "projects/MuseoScienza/X31.png",
+      "projects/MuseoScienza/X32.png"
+    ],
+    "cliente":"Roma Capitale",
+    "status":"Competition - Sixth prize",
+    "program":"Museum",
+    "info":"Rome (IT), 2023",
+    "team":"Fluidiforme (Antonino Caridi, Davide Casaletto), KH Studio",
+    "consultants":"Sulkin + Marchissio, Segmento.A, HUB Engineering ",
+    "testo": "The Science Museum will be built in what is already today the new cultural living room of the city of Rome. An area between the bend of the Tevere and the slopes of Monte Mario, where the traces of a complex urban development have settled, as in a palimpsest defined by André Corboz: the area’s twentieth-century industrial tradition interfaces with works of contemporary architecture, such as the MAXXI by Zaha Hadid, the Palazzetto dello Sport by Nervi, the Auditorium by Piano and the Great MAXXI by LAN studio. \n\nAware of intervening in a context rich in history but inclined towards a new urbanism defined by the masterplan of the Viganò studio, our design process arose from a careful and critical reading of those traces left by past interventions and by the regulatory principles of those to come, in order to trace the genius loci of the Flaminio district."
   },
   {
     "titolo": "Density: Mode d'emploi",
     "descrizione":"Competition, Tilburg, 2023",
     "copertina": "images/FF_05.png",
-    "testo": "Testo del Progetto 1...",
-    "immagini": "projects/Density/"
+    "immagini": [
+      "projects/Density/X34.png",
+      "projects/Density/X35.png",
+      "projects/Density/X36.png",
+      "projects/Density/X37.png",
+      "projects/Density/X38.png",
+      "projects/Density/X39.png",
+      "projects/Density/X40.png",
+      "projects/Density/X41.png"
+    ],
+    "cliente":"City of Tilburg",
+    "status":"Competition - Second prize",
+    "program":"Housing - amenities",
+    "info":"Tilburg (NL), 2023",
+    "team":"Antonino Caridi, Davide Casaletto",
+    "testo": "The urban fabric of Tilburg West is a palimpsest (Andre Corboz, 1987) on which the traces of post-war urbanization insist, with its Kennisas and an intense network of green and blue mixed with buildings formally heterogeneous, but functionally homogeneous.\n\nThe project plot is located in an interesting morphological context: in the North, the classic Dutch terraced houses, characterized by two-storey buildings with a strong relationship with the street and the backyard. To the south, there are modernist li-near blocks, with five floors above ground and a strong horizontal organization. To the east, large industrial buildings (factory box), introverted, that do not communi¬cate with the city around.\n\nThe idea of the project stems from the desire to maintain the genius loci of the area, reinterpreting the morphologies that already exist on the context, organizing the Super Block around the lake and connecting it to the urban paths."
   },
   {
     "titolo": "Housing Block",
     "descrizione":"Ongoing, Montauro, 2023",
     "copertina": "images/FF_06.png",
-    "testo": "Testo del Progetto 1...",
-    "immagini": "projects/HousingBlock/"
+    "immagini": [
+      "projects/HousingBlock/X43.png",
+      "projects/HousingBlock/X44.png",
+      "projects/HousingBlock/X45.png",
+      "projects/HousingBlock/X46.png",
+      "projects/HousingBlock/X47.png"
+    ],
+    "cliente":"",
+    "status":"",
+    "program":"",
+    "info":"",
+    "team":"",
+    "testo": ""
   },
   {
     "titolo": "Casa di cura",
     "descrizione":"Competition, Falzes, 2023",
     "copertina": "images/FF_07.png",
-    "testo": "Testo del Progetto 1...",
-    "immagini": "projects/Casadicura/"
+    "immagini": [
+      "projects/Casadicura/X49.png",
+      "projects/Casadicura/X50.png",
+      "projects/Casadicura/X51.png",
+      "projects/Casadicura/X52.png",
+      "projects/Casadicura/X53.png",
+      "projects/Casadicura/X54.png",
+      "projects/Casadicura/X55.png",
+      "projects/Casadicura/X56.png"
+    ],
+    "cliente":"Comune di Falzes",
+    "status":"2 phases competition – Third prize",
+    "program":"Housing + Care",
+    "info":"Falzes (IT), 2023-2024",
+    "team":"Fluidiforme (Antonino Caridi, Davide Casaletto), Sulkin + Marchissio, Segmento.A",
+    "testo": "The project aims to divide the concept of a single volume both functionally and compositionally into multiple 'residences' with the typical features of Alps architecture in natural landscape. As a result, the layout is characterized by 'systems' of aggregated functions.\n\nThe building consists of three levels, including the ground floor, which is accessed from a semi-public 'plaza' designed to host various events, permeating the interior space and connected to the main hall and the residence's info point, the chapel, and another 'private' entrance leading to the apartments (5 residences for the elderly)."
   },
   {
     "titolo": "Raw Cloud",
     "descrizione":"Mialn Design Week, Milan, 2024",
     "copertina": "images/FF_08.png",
-    "testo": "Testo del Progetto 1...",
-    "immagini": "projects/RawCloud/"
+    "immagini": [
+      "projects/RawCloud/X58.png",
+      "projects/RawCloud/X59.png",
+      "projects/RawCloud/X60.png",
+      "projects/RawCloud/X61.png",
+      "projects/RawCloud/X62.png",
+      "projects/RawCloud/X63.png"
+    ],
+    "cliente":"//",
+    "status":"//",
+    "program":"Product design",
+    "info":"Exhibited at MDW 2024",
+    "team":"Antonino Caridi, Davide Casaletto",
+    "testo": "Raw Cloud is a symbol of the interaction between the tangible and the abstract, the concrete and the fluid.\n\nIn its geometric form, the cube represents rigor and purity of line.\n\nHowever, the polyurethane foam coating subverts this static nature, introducing an element of fluidity and transformation. This contrast highlights the concept of duality and change.\n\nRaw Cloud can serve as a meeting point between individuals, encouraging human conversations and interactions. In its role as home furnishings, it can facilitate moments of sharing and social connection, providing a shared space for experience and contemplation, which is reflected in its very essence of uniting materiality and concept."
   },
   {
     "titolo": "Manifattura Tabacchi Torino",
     "descrizione":"Competition, Turin, 2024",
     "copertina": "images/FF_09.png",
-    "testo": "Testo del Progetto 1...",
-    "immagini": "projects/ManifatturaTabacchi/"
+    "immagini": [
+      "projects/ManifatturaTabacchi/X65.png",
+      "projects/ManifatturaTabacchi/X66.png",
+      "projects/ManifatturaTabacchi/X67.png",
+      "projects/ManifatturaTabacchi/X68.png",
+      "projects/ManifatturaTabacchi/X69.png",
+      "projects/ManifatturaTabacchi/X70.png"
+    ],
+    "cliente":"Agenzia del Demanio",
+    "status":"Competition",
+    "program":"Archive + Masterplan",
+    "info":"Torino (IT), 2024",
+    "team":"Fluidiforme (Antonino Caridi, Davide Casaletto), Sossio De Vita, Archisbang",
+    "testo": "Flânerie is an open work that focuses on the experience - unique and free - of the subject, using architecture as a tool to educate to the complexity and plurality of experiences.\n\nFlânerie is the exasperation of division: it is learning through the discovery of the void.\n\nThe project is based on a dualistic design approach: on one side, the aim to preserve the tectonics of the Hangar and its rigid concrete grid; on the other side, the triggering of three tools: tower, tunnel, and platform.\n\nThe central part corresponds to the heart of the project and it’s where all the main functions are placed. The new polycarbonate panels can be opened according to the hangars’ openings, and they spread the light like a lantern on the waters of Ticino river. Instead, the last span totally lists its materiality because the original facade is substituted by glass panels that open the view on the countryside."
   },
   {
     "titolo": "Tetralogia Urbana",
     "descrizione":"Competition, Padova, 2024",
     "copertina": "",
-    "testo": "Testo del Progetto 1...",
-    "immagini": "projects/TetralogiaUrbana/"
+    "immagini": [
+      "projects/TetralogiaUrbana/X72.png",
+      "projects/TetralogiaUrbana/X73.png",
+      "projects/TetralogiaUrbana/X74.png",
+      "projects/TetralogiaUrbana/X75.png",
+      "projects/TetralogiaUrbana/X76.png",
+      "projects/TetralogiaUrbana/X77.png",
+      "projects/TetralogiaUrbana/X78.png",
+      "projects/TetralogiaUrbana/X79.png"
+    ],
+    "cliente":"AAA Architetti Cercasi",
+    "status":"Competition",
+    "program":"Housing - amenities",
+    "info":"Padova (IT), 2024",
+    "team":"Fluidiforme (Antonino Caridi, Davide Casaletto, Giulia Pasquale)",
+    "testo": "'Tetralogia Urbana' investigates the relationship between the design of affordable cooperative living and the city system, exploring the role of public space in defining strategies capable of generating urbanity.\n\nThe new complex opens up to the city, tracing an unprecedented diagonal axis that connects the Battaglia Canal with the tram line on Via Santa Maria Assunta, passing through the churchyard. This urban gesture connects the lot to the city on a small scale and, on a large scale, links it to Padua's infrastructure and natural heritage.\n\nThe diagonal designs and connects a 'tetralogy' of squares with different geometries, functions, and material treatments: the arena, Piazza Bassanello, the churchyard, and the flânerie. Rethinking the relationship between living and the city (polis) allows us to give a piece back to the people of Padua, thus restoring the right to the city (H. Lefebvre)."
   },
   {
-    "titolo": "XXX",
+    "titolo": "Attraverso Sant'Eligio",
     "descrizione":"Competition, Turin, 2024",
     "copertina": "",
-    "testo": "Testo del Progetto 1...",
-    "immagini": "projects/XXX/"
+    "immagini": [
+      "projects/AttraversoSantEligio/X81.png",
+      "projects/AttraversoSantEligio/X82.png",
+      "projects/AttraversoSantEligio/X83.png",
+      "projects/AttraversoSantEligio/X84.png",
+      "projects/AttraversoSantEligio/X85.png",
+      "projects/AttraversoSantEligio/X86.png",
+      "projects/AttraversoSantEligio/X87.png",
+      "projects/AttraversoSantEligio/X88.png",
+      "projects/AttraversoSantEligio/X89.png"
+    ],
+    "cliente":"AAA Architetti Cercasi",
+    "status":"Competition",
+    "program":"Housing - amenities",
+    "info":"Torino (IT), 2024",
+    "team":"Fluidiforme (Antonino Caridi, Davide Casaletto, Burak Avcioglu)",
+    "testo": "The typical courtyard morphology of the Turin grid, introverted and closed, gives way to a system that is open and accessible to the entire community. Drawing on the post-modern theories of Camillo Sitte and Christian de Portzamparc, the emotional and positive character of dense European urban fabrics emerges from the creation of public spaces that are both defined and open.\n\nFrom this interpretation of the city, an extremely porous ground floor is generated, open to the city and inviting citizens to pass through, connecting the southern urban front with the green area to the north. The public ground floor consists of two opposing buildings: to the east, the restored pre-existing structure; to the west, a newly constructed triangular building that defines the diagonal of the courtyard."
   }
 ]

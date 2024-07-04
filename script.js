@@ -64,7 +64,7 @@ function fadeImage(img) {
     }
   }
   updateOpacity();
-}
+} //questa funzione non è usata
 
 function getMaxZ() {
   let maxIndex= 0;
@@ -80,9 +80,6 @@ function getMaxZ() {
 function showImages(){
   let index = 1;
   const totalImages = images.length - 1;
-
-
-
   function appendImage() {
     if(index < totalImages){
       
@@ -97,13 +94,29 @@ function showImages(){
     appendImage();
     bringOn();
   });
- 
 }
+
+function setImagesDimensions(img, progetto){
+  img.src = progetto.copertina;
+  img.alt = progetto.titolo;
+  img.classList.add('draggable');
+  $(img).draggable({
+    containment: 'parent'
+  });
+  img.style.top = 0;
+  img.style.left = 0;
+  img.width = mainContent.offsetWidth * 0.28;
+  const randH = Math.floor(Math.random() * 100000 % (mainContent.offsetHeight - 2*img.width)) + 'px';
+  const randW = Math.floor(Math.random() * (mainContent.offsetWidth - img.width - 100)) + 'px';
+      img.style.position = 'absolute';
+      img.style.top = randH;
+      img.style.left = randW;
+}
+
 
 //questa funzione gestisce tutta la parte delle immagini
 async function generaImmagini(){
   await getJson();
-
   if(window.innerWidth < 1000){
     progetti.forEach(progetto => {
       //tutta questa parte può essere incapsulata in delle funzioni per rendere lo script più leggibile
@@ -119,21 +132,7 @@ async function generaImmagini(){
     progetti.forEach(progetto => {
       //tutta questa parte può essere incapsulata in delle funzioni per rendere lo script più leggibile
       const img = document.createElement('img');
-      img.src = progetto.copertina;
-      img.alt = progetto.titolo;
-      img.classList.add('draggable');
-      
-      $(img).draggable({
-        containment: 'parent'
-      });
-      img.style.top = 0;
-      img.style.left = 0;
-      img.width = mainContent.offsetWidth * 0.28;
-      const randH = Math.floor(Math.random() * 100000 % (mainContent.offsetHeight - 2*img.width)) + 'px';
-      const randW = Math.floor(Math.random() * (mainContent.offsetWidth - img.width - 100)) + 'px';
-      img.style.position = 'absolute';
-      img.style.top = randH;
-      img.style.left = randW;
+      setImagesDimensions(img,progetto);
       images.push(img);
       if(n == 0){
         mainContent.appendChild(img);
@@ -141,19 +140,64 @@ async function generaImmagini(){
       }
     });
     showImages();
-
   }
-  console.log("fine lettura json e creazione immagini");
+  popolaProgetti();
+  //console.log("fine lettura json e creazione immagini");
 }
 
 $(document).ready(function() {
   generaImmagini();
 });
 
-
-
-
-
+function popolaProgetti(){
+  const rightColumn = document.querySelector('.right-column');
+  progetti.forEach(progetto => {
+    const projectDataContainer = document.createElement('div');
+    projectDataContainer.classList.add("project-data-container");
+    projectDataContainer.id = rimuoviSpazi(progetto.titolo);
+    const projectText = document.createElement('div');
+    projectText.classList.add('project-text');
+    const genericInfo = document.createElement('div');
+    genericInfo.classList.add('generic-info');
+    genericInfo.style.display = 'grid';
+    genericInfo.style.gridTemplateColumns = '1fr 1fr';
+    let count = 0;
+    progetto.immagini.forEach(immagine => {
+      if(count === 1){//qui viene generato il testo
+        const t = document.createElement('h1');
+        t.textContent = progetto.titolo;
+        projectText.appendChild(t);
+        projectText.appendChild(genericInfo);
+        const client = document.createElement('p');
+        client.innerHTML = '<b>Client: </b>' + progetto.cliente;
+        genericInfo.appendChild(client);
+        const status = document.createElement('p');
+        status.innerHTML = '<b>Status: </b>' + progetto.status;
+        genericInfo.appendChild(status);
+        const program = document.createElement('p');
+        program.innerHTML = '<b>Proigram: </b>' + progetto.program;
+        genericInfo.appendChild(program);
+        const info = document.createElement('p');
+        info.innerHTML = '<b>Info: </b>' + progetto.info;
+        genericInfo.appendChild(info);
+        const pt = document.createElement('p');
+        pt.innerHTML = '<b>Project Team: </b>' + progetto.team;
+        //projectText.appendChild(pt);
+        const testo = document.createElement('p');
+        testo.textContent = progetto.testo;
+        //projectText.appendChild(testo);
+        projectText.append(pt,testo);
+        projectDataContainer.appendChild(projectText);
+      }
+      const img = document.createElement('img');
+      img.src = immagine;
+      img.alt = progetto.titolo + count;
+      projectDataContainer.append(img);
+      count++;
+    })
+    rightColumn.appendChild(projectDataContainer);
+  })
+}
 
 
 
@@ -178,10 +222,18 @@ function showContent(content) {
 //Questa funzione mostra il progetto selezionato 
 function showProject(p){
   $('.project-data-container').removeClass('visible');
-  $('#' + p + '-container').addClass('visible');
+  document.querySelectorAll('.project-data-container').forEach( container => {
+    container.scrollTop = 0;
+  })
+  $('#' + p).addClass('visible');
   if(window.innerWidth < 1000){
     $('.projectsMenu').attr('id', '');
     $('.project-data-container').removeClass('visible');
-    $('#' + p + '-container').addClass('visible');
+    $('#' + p).addClass('visible');
   }
+}
+
+function rimuoviSpazi(str) {
+  // Utilizza un'espressione regolare per sostituire tutti gli spazi con una stringa vuota
+  return str.replace(/[^a-zA-Z0-9]/g, '');
 }

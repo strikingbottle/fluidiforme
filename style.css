@@ -91,7 +91,7 @@ div.project-data-container img {
     object-fit: cover; /* This property makes the image cover the given dimension, similar to background-size: cover; */
     display: none; /* Hide all images initially */ 
     position: absolute; /* Overlay images on top of each other */
-    top: -6% !important;
+    top: -7% !important;
     left: 0% !important;
   }
   .main-content img:first-child {
@@ -138,13 +138,7 @@ div.project-data-container img {
     text-decoration: none;
     color: #333; /* Cambia colore testo a tuo piacimento */
   }
-  a p{
-    padding: 0;
-    margin: 0;
-    font-family: Arial, sans-serif; /* Imposta il font per i paragrafi all'interno di collegamenti */
-    font-size: 16px; /* Imposta la dimensione del font per i paragrafi all'interno di collegamenti */
-    color: grey; /* Imposta il colore del testo per i paragrafi all'interno di collegamenti */
-  }
+
 
   .project-data-container {
     background-color: #fff;
@@ -243,13 +237,7 @@ div.project-data-container img {
     margin-bottom: 10px; /* Add margin between menu items */
     display: block;
   }
-  a p{
-    padding: 0;
-    margin: 0;
-    font-family: Arial, sans-serif; /* Imposta il font per i paragrafi all'interno di collegamenti */
-    font-size: 16px; /* Imposta la dimensione del font per i paragrafi all'interno di collegamenti */
-    color: grey; /* Imposta il colore del testo per i paragrafi all'interno di collegamenti */
-  }
+
   .project-data-container {
     overflow: hidden;
     display: none;
@@ -262,6 +250,19 @@ div.project-data-container img {
   }
 }
 
+#aboutContent{
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  overflow: scroll;
+  gap: 10px;
+  padding-top: 3%;
+}
+
+#aboutContent img{
+  width: 100%;
+  height: auto;
+}
+
 #aboutContent p{
   padding: 0;
   margin: 0;
@@ -272,10 +273,20 @@ div.project-data-container img {
 .left-column::-webkit-scrollbar { /* hides scrollbar */
   display: none;
 }
+
+a p{
+  padding: 0;
+  margin: 0;
+  font-family: Arial, sans-serif; /* Imposta il font per i paragrafi all'interno di collegamenti */
+  font-size: 16px; /* Imposta la dimensione del font per i paragrafi all'interno di collegamenti */
+  color: grey; /* Imposta il colore del testo per i paragrafi all'interno di collegamenti */
+}
 .right-column::-webkit-scrollbar {
   display: none;
 }
-
+.project-text p {
+  font-family: Arial, sans-serif;
+}
 
 /* keyframes */
 @keyframes slide-up {
