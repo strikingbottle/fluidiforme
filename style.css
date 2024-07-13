@@ -38,7 +38,7 @@ div.project-data-container img {
   nav {
     width: 90%;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;   
+    grid-template-columns: 3fr 4fr 3fr;   
     border-radius: 10px;
     overflow: hidden;
     background-color: rgba(68, 68, 68, 0.6);
@@ -74,7 +74,7 @@ div.project-data-container img {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 87%;
   }
   /* Rules for Main Content */
   .main-content {
@@ -85,19 +85,25 @@ div.project-data-container img {
     width: 100%;
   }
   /* Rules for slideshow in homepage */
-  .main-content img {
+  .main-content img, video {
     width: 100vw;
-    height: 106vh;  /* Adjusts the height to take up the remaining viewable area */
+    height: 100vh;  /* Adjusts the height to take up the remaining viewable area */
     object-fit: cover; /* This property makes the image cover the given dimension, similar to background-size: cover; */
     display: none; /* Hide all images initially */ 
     position: absolute; /* Overlay images on top of each other */
-    top: -7% !important;
+    top: -50px !important;
     left: 0% !important;
   }
   .main-content img:first-child {
     display: block; /* Show the first image by default */
   }
-
+  .footer p:first-of-type{
+    top: 0;
+    color: black;
+  }
+  .footer p:nth-of-type(2){
+    display: none;
+  }
   /* Rules for about page */
   #aboutContent {
     padding: 20px;
@@ -113,6 +119,9 @@ div.project-data-container img {
     animation: slide-up 0.5s ease-in-out;
   }
 
+  #projectsContent{
+    overflow: scroll;
+  }
   /* Rules for Main Content */
   .copertina {
     position: absolute;
@@ -152,6 +161,22 @@ div.project-data-container img {
     animation: slide-up 0.5s ease-in-out;
     overflow-y: auto;
   }
+  #aboutContent{
+    display: grid;
+    grid-template-rows: auto;
+    overflow: scroll;
+    gap: 10px;
+    padding-top: 3%;
+  }
+  .contacts{
+    order: 3;
+  }
+  .aboutUs {
+    order: 1;
+  }
+  #aboutContent img {
+    order: 2;
+  }
 }
 
 /*********************/
@@ -189,12 +214,12 @@ div.project-data-container img {
   }
   .slide-up-content {
     margin-top: 40px;
-    padding: 2%;
+    /* padding: 2%; */
     position: absolute;
     top: 0;
     left: 0;
-    width: 96%;
-    height: 96%;
+    width: 100%;
+    height: 100%;
 }
 
   .draggable {
@@ -213,21 +238,18 @@ div.project-data-container img {
     grid-template-columns: 1fr 3fr; 
     gap: 20px;
     position: absolute;
-    top: 10;
+    padding-top: 20px;
     left: 0;
     width: 100%;
     height: 100%;
     overflow: auto; /* Abilita lo scroll */
-  }
-  .left-column {
-    overflow-y:scroll;
   }
   .right-column {
     overflow-y: scroll; /* Enable vertical scrolling */
   }
 
   .projectsMenu {
-    padding: 10px;
+    padding: 20px 0 0 20px;
     margin-bottom: 70px;/* questo margine serve a compensare la sfasatura dovuta al margin top e al padding di slideup-content */
   }
   .projectsMenu a {
@@ -236,6 +258,14 @@ div.project-data-container img {
     text-decoration: none;
     margin-bottom: 10px; /* Add margin between menu items */
     display: block;
+  }
+  
+  .projectsMenu a.selected{
+    color: blue;
+  }
+  .projectsMenu a.selected p{
+    color: blue;
+    opacity: 75%;
   }
 
   .project-data-container {
@@ -248,15 +278,20 @@ div.project-data-container img {
     display: block;
     animation: slide-up 0.5s ease-in-out;
   }
+  #aboutContent{
+    display: grid;
+    grid-template-columns: 1fr 4fr 3fr;
+    overflow: scroll;
+    gap: 10px;
+    padding-top: 3%;
+  }
+
+  .contacts {
+    padding: 0 0 0 20px;
+  }
 }
 
-#aboutContent{
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  overflow: scroll;
-  gap: 10px;
-  padding-top: 3%;
-}
+
 
 #aboutContent img{
   width: 100%;
@@ -268,7 +303,7 @@ div.project-data-container img {
   margin: 0;
   font-family: Arial, sans-serif; /* Imposta il font per i paragrafi all'interno di collegamenti */
   font-size: 16px; /* Imposta la dimensione del font per i paragrafi all'interno di collegamenti */
-  color: grey; /* Imposta il colore del testo per i paragrafi all'interno di collegamenti */
+  color: black; /* Imposta il colore del testo per i paragrafi all'interno di collegamenti */
 }
 .left-column::-webkit-scrollbar { /* hides scrollbar */
   display: none;
@@ -287,7 +322,9 @@ a p{
 .project-text p {
   font-family: Arial, sans-serif;
 }
-
+.left-column {
+  overflow: scroll;
+}
 /* keyframes */
 @keyframes slide-up {
     from {

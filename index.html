@@ -12,7 +12,7 @@
 <body>
   <header>
     <nav>
-      <a href="#projects" onclick="showContent('projects')">Projects</a>
+      <a href="#projects" onclick="showProjectPage('projects')">Projects</a>
       <a href="">Fluidiforme</a>
       <a href="#about" onclick="showContent('about')">About</a>
     </nav>
@@ -75,159 +75,13 @@
       <div class="project-container">
         <div class="left-column">
           <div class="projectsMenu">
-            <a href="#projects_k" onclick="showProject('AttraversoSantEligio')">Attraverso Sant'Eligio
-              <p>Competition, Turin, 2024</p>
-            </a>
-            <a href="#projects_j" onclick="showProject('TetralogiaUrbana')">Tetralogia Urbana
-              <p>Competition, Padova, 2024</p>
-            </a>
-            <a href="#projects_i" onclick="showProject('ManifatturaTabacchiTorino')">Manifattura Tabacchi Torino
-              <p>Competition, Turin, 2024</p>
-            </a>
-            <a href="#projects_h" onclick="showProject('RawCloud')">Raw Cloud
-              <p>Mialn Design Week, Milan, 2024</p>
-            </a>
-            <a href="#projects_g" onclick="showProject('Casadicura')">Casa di cura
-              <p>Competition, Falzes, 2023</p>
-            </a>
-            <a href="#projects_f" onclick="showProject('HousingBlock')">Housing Block
-              <p>Ongoing, Montauro, 2023</p>
-            </a>
-            <a href="#projects_e" onclick="showProject('DensityModedemploi')">Density: Mode d'emploi
-              <p>Competition, Tilburg, 2023</p>
-            </a>
-            <a href="#projects_d" onclick="showProject('MuseodellaScienza')">Museo della Scienza
-              <p>Competition, Rome, 2022</p>
-            </a>
-            <a href="#projects_c" onclick="showProject('Petraro')">Petraro
-              <p>Private housing, Soverato, 2021</p>
-            </a>
-            <a href="#projects_b" onclick="showProject('Flanerie')">Flanerie
-              <p>Premio Federico Maggia, Biella, 2021</p>
-            </a>
-            <a href="#projects_a" onclick="showProject('HangarTicinum')">Hangar Ticinum
-              <p>Competition, Pavia, 2020</p>
-            </a>
             <!-- Add more project links as needed -->
           </div>
         </div>
         <div class="right-column">
           <div class="project-data-container visible" id="default-project">
-            <img src="images/FF_01.png" alt="Project Image 1">
-            <img src="images/FF_02.png" alt="Project Image 2">
             <!-- Add more images for each project -->
           </div>
-          <!-- <div class="project-data-container" id="project_a-container">
-            <img src="projects/HangarTicinum/X2.png" alt="Project Image 1">
-            <div class="project-text">
-              <h1>Hangar Ticinum</h1>
-              <div class="generic-info" style="display: grid; grid-template-columns: 1fr 1fr;">
-                <p><b>Client: </b> Terraviva competitions</p>
-                <p><b>Status: </b> Competition <b>Honorable Mention</b></p>
-                <p><b>Program: </b> Community Hub</p>
-                <p><b>Info: </b>  Pavia(IT), 2021</p>
-              </div>
-              <p><b>Project Team: </b> Fluidiforme (Antonino Caridi, Davide Casaletto), Gianluca Basile</p>
-              <p>The project is based on a dualistic design approach: on one side, the aim to preserve the tectonics of the Hangar and its rigid concrete grid; on the other side, the triggering of three tools: tower, tunnel, and platform./n/nThe central part corresponds to the heart of the project and it’s where all the main functions are placed. The new polycarbonate panels can be opened according to the hangars’ openings, and they spread the light like a lantern on the waters of Ticino river. Instead, the last span totally lists its materiality because the original facade is substituted by glass panels that open the view on the countryside.</p>
-            </div>
-            <img src="projects/HangarTicinum/X3.png" alt="Project Image 1">
-            <img src="projects/HangarTicinum/X4.png" alt="Project Image 1">
-            <img src="projects/HangarTicinum/X5.png" alt="Project Image 1">
-            <img src="projects/HangarTicinum/X6.png" alt="Project Image 1">
-            <img src="projects/HangarTicinum/X7.png" alt="Project Image 1">
-          </div>
-          <div class="project-data-container" id="project_b-container">
-            <img src="projects/Flanerie/X9.png" alt="Project Image 1">
-            <img src="projects/Flanerie/X10.png" alt="Project Image 1">
-            <img src="projects/Flanerie/X11.png" alt="Project Image 1">
-            <img src="projects/Flanerie/X12.png" alt="Project Image 1">
-            <img src="projects/Flanerie/X13.png" alt="Project Image 1">
-            <img src="projects/Flanerie/X14.png" alt="Project Image 1">
-            <img src="projects/Flanerie/X15.png" alt="Project Image 1">
-            <img src="projects/Flanerie/X16.png" alt="Project Image 1">
-          </div>
-          <div class="project-data-container" id="project_c-container">
-            <img src="projects/Petraro/X18.png" alt="Project Image 1">
-            <img src="projects/Petraro/X19.png" alt="Project Image 1">
-            <img src="projects/Petraro/X20.png" alt="Project Image 1">
-            <img src="projects/Petraro/X21.png" alt="Project Image 1">
-            <img src="projects/Petraro/X22.png" alt="Project Image 1">
-            <img src="projects/Petraro/X23.png" alt="Project Image 1">
-          </div>
-          <div class="project-data-container" id="project_d-container">
-            <img src="projects/MuseoScienza/X25.png" alt="Project Image 1">
-            <img src="projects/MuseoScienza/X26.png" alt="Project Image 1">
-            <img src="projects/MuseoScienza/X27.png" alt="Project Image 1">
-            <img src="projects/MuseoScienza/X28.png" alt="Project Image 1">
-            <img src="projects/MuseoScienza/X29.png" alt="Project Image 1">
-            <img src="projects/MuseoScienza/X30.png" alt="Project Image 1">
-            <img src="projects/MuseoScienza/X31.png" alt="Project Image 1">
-            <img src="projects/MuseoScienza/X32.png" alt="Project Image 1">
-          </div>
-          <div class="project-data-container" id="project_e-container">
-            <img src="projects/Density/X34.png" alt="Project Image 1">
-            <img src="projects/Density/X35.png" alt="Project Image 1">
-            <img src="projects/Density/X36.png" alt="Project Image 1">
-            <img src="projects/Density/X37.png" alt="Project Image 1">
-            <img src="projects/Density/X38.png" alt="Project Image 1">
-            <img src="projects/Density/X39.png" alt="Project Image 1">
-            <img src="projects/Density/X40.png" alt="Project Image 1">
-            <img src="projects/Density/X41.png" alt="Project Image 1">
-          </div>
-          <div class="project-data-container" id="project_f-container">
-            <img src="projects/HousingBlock/X43.png" alt="Project Image 1">
-            <img src="projects/HousingBlock/X44.png" alt="Project Image 1">
-            <img src="projects/HousingBlock/X45.png" alt="Project Image 1">
-            <img src="projects/HousingBlock/X46.png" alt="Project Image 1">
-            <img src="projects/HousingBlock/X47.png" alt="Project Image 1">
-          </div>
-          <div class="project-data-container" id="project_g-container">
-            <img src="projects/CasadiCura/X49.png" alt="Project Image 1">
-            <img src="projects/CasadiCura/X50.png" alt="Project Image 1">
-            <img src="projects/CasadiCura/X51.png" alt="Project Image 1">
-            <img src="projects/CasadiCura/X52.png" alt="Project Image 1">
-            <img src="projects/CasadiCura/X53.png" alt="Project Image 1">
-            <img src="projects/CasadiCura/X54.png" alt="Project Image 1">
-            <img src="projects/CasadiCura/X55.png" alt="Project Image 1">
-            <img src="projects/CasadiCura/X56.png" alt="Project Image 1">
-          </div>
-          <div class="project-data-container" id="project_h-container">
-            <img src="projects/RawCloud/X58.png" alt="Project Image 1">
-            <img src="projects/RawCloud/X59.png" alt="Project Image 1">
-            <img src="projects/RawCloud/X60.png" alt="Project Image 1">
-            <img src="projects/RawCloud/X61.png" alt="Project Image 1">
-            <img src="projects/RawCloud/X62.png" alt="Project Image 1">
-            <img src="projects/RawCloud/X63.png" alt="Project Image 1">
-          </div>
-          <div class="project-data-container" id="project_i-container">
-            <img src="projects/ManifatturaTabacchi/X65.png" alt="Project Image 1">
-            <img src="projects/ManifatturaTabacchi/X66.png" alt="Project Image 1">
-            <img src="projects/ManifatturaTabacchi/X67.png" alt="Project Image 1">
-            <img src="projects/ManifatturaTabacchi/X68.png" alt="Project Image 1">
-            <img src="projects/ManifatturaTabacchi/X69.png" alt="Project Image 1">
-            <img src="projects/ManifatturaTabacchi/X70.png" alt="Project Image 1">
-          </div>
-          <div class="project-data-container" id="project_j-container">
-            <img src="projects/TetralogiaUrbana/X72.png" alt="Project Image 1">
-            <img src="projects/TetralogiaUrbana/X73.png" alt="Project Image 1">
-            <img src="projects/TetralogiaUrbana/X74.png" alt="Project Image 1">
-            <img src="projects/TetralogiaUrbana/X75.png" alt="Project Image 1">
-            <img src="projects/TetralogiaUrbana/X76.png" alt="Project Image 1">
-            <img src="projects/TetralogiaUrbana/X77.png" alt="Project Image 1">
-            <img src="projects/TetralogiaUrbana/X78.png" alt="Project Image 1">
-            <img src="projects/TetralogiaUrbana/X79.png" alt="Project Image 1">
-          </div>
-          <div class="project-data-container" id="project_k-container">
-            <img src="projects/AttraversoSantEligio/X81.png" alt="Project Image 1">
-            <img src="projects/AttraversoSantEligio/X82.png" alt="Project Image 1">
-            <img src="projects/AttraversoSantEligio/X83.png" alt="Project Image 1">
-            <img src="projects/AttraversoSantEligio/X84.png" alt="Project Image 1">
-            <img src="projects/AttraversoSantEligio/X85.png" alt="Project Image 1">
-            <img src="projects/AttraversoSantEligio/X86.png" alt="Project Image 1">
-            <img src="projects/AttraversoSantEligio/X87.png" alt="Project Image 1">
-            <img src="projects/AttraversoSantEligio/X88.png" alt="Project Image 1">
-            <img src="projects/AttraversoSantEligio/X89.png" alt="Project Image 1">
-          </div> -->
         </div>
       </div>
     </div>

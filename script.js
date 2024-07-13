@@ -1,16 +1,20 @@
 // Dichiarazione Variabili
 
 let progetti = null;
+let homeImages = null;
 let images = [];
 const mainContent = document.getElementById('main-content');//importante, non rimuovere
-
+let home_element_count = 0;
 
 //definizione funzioni
 
 /* funzione per ambiente di test */
 async function getJson(){
   const d = await fetch('/progetti.json');
-  progetti = await d.json();
+  const d1 = await d.json();
+  progetti = await d1.projects;
+  homeImages = await d1.homeImages;
+  //console.log( await homeImages);
 }
 
 /* async function getJson(){
@@ -21,7 +25,7 @@ async function getJson(){
 //change image on tap for mobile
 function mobileVersion(){
   let index = 0;
-  const totalImages = images.length - 1;
+  const totalImages = images.length;
   function changeImage() {
     $(images[index]).fadeOut(1, function() {
       index = (index + 1) % totalImages;
@@ -30,6 +34,7 @@ function mobileVersion(){
   }
   $('.main-content').on('click', function() {
     changeImage();
+    updateFooters();
   });
 }
 
@@ -50,107 +55,249 @@ function bringOn(){
   });
 }
 
-
-function fadeImage(img) {
-  let opacity = 0;
-  function updateOpacity() {
-    opacity += 0.05;
-    if (opacity >= 1) {
-      opacity = 1;
-    }
-    img.style.opacity = opacity;
-    if (opacity < 1) {
-      requestAnimationFrame(updateOpacity);
-    }
-  }
-  updateOpacity();
-} //questa funzione non è usata
-
 function getMaxZ() {
   let maxIndex= 0;
   images.forEach(image => {
     if(image.style.zIndex != NaN && image.style.zIndex > maxIndex)
       maxIndex = parseInt(image.style.zIndex) + 1;
   })
-  console.log('ActualMax', maxIndex)
+  console.log(progetti.length);
+  //console.log('ActualMax', maxIndex)
   return maxIndex;
 }
 
 //add an image every time the user click on main content
-function showImages(){
+function showImages(){//da rivedere
   let index = 1;
-  const totalImages = images.length - 1;
+  const totalImages = images.length;
   function appendImage() {
     if(index < totalImages){
-      
       images[index].style.zIndex = parseInt(getMaxZ()) + 1;
-      //images[index].style.opacity = 0;
       mainContent.appendChild(images[index]);
-      //fadeImage(images[index]);
       index++;
     }
   }
   $('.main-content').on('click', function() {
     appendImage();
     bringOn();
+    updateFooters();
   });
 }
 
-function setImagesDimensions(img, progetto){
-  img.src = progetto.copertina;
-  img.alt = progetto.titolo;
+
+
+
+function addselected(element){
+  document.querySelectorAll('.projectsMenu a').forEach(link =>{
+    link.classList.remove('selected');
+  })
+  element.classList.add('selected');
+}
+
+function removeLinkSelected() {
+  document.querySelectorAll('.projectsMenu a').forEach(link =>{
+    link.classList.remove('selected');
+  })
+}
+
+function rimuoviSpazi(str) {
+  // Utilizza un'espressione regolare per sostituire tutti gli spazi con una stringa vuota
+  return str.replace(/[^a-zA-Z0-9]/g, '');
+}
+
+function createProjectMenu(){
+  progetti.forEach(progetto => {
+    const link = document.createElement('a');
+    link.classList.add(rimuoviSpazi(progetto.titolo))
+    link.onclick = function (){
+      const classeProgetto = rimuoviSpazi(progetto.titolo);
+      showProject(classeProgetto);
+      addselected(this);
+    };
+    link.textContent = progetto.titolo;
+    const descr = document.createElement('p');
+    descr.textContent = progetto.descrizione;
+    link.appendChild(descr);
+    const projectMenu = document.querySelector('.projectsMenu');
+    projectMenu.append(link);
+  })
+}
+
+
+//Aggiorna il contenuto dei footer
+function updateFooters(){
+  const p1 = document.querySelector('.footer p:first-of-type');
+  const p2 = document.querySelector('.footer p:nth-of-type(2)');
+  if (home_element_count < homeImages.length+1){
+    p2.innerHTML = homeImages[home_element_count].name;
+    home_element_count++;
+    p1.innerHTML = home_element_count + '/' + homeImages.length;
+    if(window.innerWidth < 1000){
+      p1.innerHTML = home_element_count + '/' + (homeImages.length - 4);
+      if(home_element_count == homeImages.length){
+      home_element_count = 0;
+      }
+    }else{
+      p1.innerHTML = home_element_count + '/' + homeImages.length;
+    }
+  }
+}
+
+//Mostra il contenuto(Home/About/Project) in base alla selezione effettuata
+function showContent(content) {
+  removeLinkSelected();
+  $('.slide-up-container').removeClass('show');
+  $('#' + content + 'Container').addClass('show');
+  if(content === 'projects'){
+    $('.project-data-container').removeClass('visible');
+    $('#' + 'default-project').addClass('visible');
+    if(window.innerWidth < 1000){
+      $('.project-data-container').removeClass('visible');
+      $('.projectsMenu').attr('id', 'show');
+    }
+  }
+}
+
+//Mostra il progetto selezionato 
+function showProject(p){
+  $('.project-data-container').removeClass('visible');
+  document.querySelectorAll('.project-data-container').forEach( container => {
+    container.scrollTop = 0;
+  })
+  $('#' + p).addClass('visible');
+  if(window.innerWidth < 1000){
+    $('.projectsMenu').attr('id', '');
+    $('.project-data-container').removeClass('visible');
+    $('#' + p).addClass('visible');
+  }
+}
+
+function generaHomeImg(parametro){
+  const img = document.createElement('img');
+  img.src = parametro.path;
+  img.alt = parametro.name;
   img.classList.add('draggable');
   $(img).draggable({
-    containment: 'parent'
+    containment: "parent"
   });
   img.style.top = 0;
   img.style.left = 0;
-  img.width = mainContent.offsetWidth * 0.28;
+  let tempwidth = mainContent.offsetWidth * 0.37 * Math.random();
+  img.width = (tempwidth > mainContent.offsetWidth/4) ? tempwidth : mainContent.offsetWidth * 0.3;
   const randH = Math.floor(Math.random() * 100000 % (mainContent.offsetHeight - 2*img.width)) + 'px';
   const randW = Math.floor(Math.random() * (mainContent.offsetWidth - img.width - 100)) + 'px';
-      img.style.position = 'absolute';
-      img.style.top = randH;
-      img.style.left = randW;
+  img.style.position = 'absolute';
+  img.style.top = randH;
+  img.style.left = randW;
+  return img;
+} 
+
+function generaHomeVideo(parametro){
+  const video = document.createElement('video');
+  video.controls = true;
+  video.autoplay = true;
+  video.loop = true;
+  video.muted = true;
+  if(window.innerWidth > 999){
+    video.height = mainContent.offsetHeight * 0.3;
+    video.classList.add('draggable');
+    $(video).draggable({
+      containment : "parent"
+    })
+    video.style.position = 'absolute';
+    video.style.top = Math.floor(Math.random() * 100000 % (mainContent.offsetHeight - 2*video.height)) + 'px';
+    video.style.left = Math.floor(Math.random() * (mainContent.offsetWidth - video.height - 100)) + 'px';
+  }
+  const source = document.createElement('source');
+  source.type = "video/mp4";
+  source.src = parametro.path;
+  video.appendChild(source);
+  return video;
 }
 
 
-//questa funzione gestisce tutta la parte delle immagini
-async function generaImmagini(){
+//Gestisce il contenuto della homepage inserendo le immagini ecc
+async function HomePageContent(){
   await getJson();
   if(window.innerWidth < 1000){
-    progetti.forEach(progetto => {
+    homeImages.forEach(homeElement => {
       //tutta questa parte può essere incapsulata in delle funzioni per rendere lo script più leggibile
-      const img = document.createElement('img');
-      img.src = progetto.copertina;
-      img.alt = progetto.titolo;
+    if(homeElement.format === "mp4") {
+/*       const vid = generaHomeVideo(homeElement);
+      mainContent.appendChild(vid);
+      images.push(vid); */
+    } else {
+      const img = generaHomeImg(homeElement)
       mainContent.appendChild(img);
       images.push(img);
+    }
     });
     mobileVersion();
   }else{
     let n = 0;
-    progetti.forEach(progetto => {
-      //tutta questa parte può essere incapsulata in delle funzioni per rendere lo script più leggibile
-      const img = document.createElement('img');
-      setImagesDimensions(img,progetto);
-      images.push(img);
+    let video;
+    homeImages.forEach(homeElement => {
+      let html_home_image;
+      if (homeElement.format === "mp4"){
+        video = generaHomeVideo(homeElement);
+        images.push(video);
+      } else {
+        html_home_image = generaHomeImg(homeElement);
+        images.push(html_home_image);
+      }
+
       if(n == 0){
-        mainContent.appendChild(img);
+        if(homeElement.format === "mp4"){
+          mainContent.append(video);
+        }else {
+        mainContent.appendChild(html_home_image);
+        }
         n=1;
       }
     });
     showImages();
   }
-  popolaProgetti();
+  createProjectMenu();
+  const footer = document.createElement('div');
+  footer.classList.add('footer');
+  const rAngle = document.createElement('p');
+  const lAngle = document.createElement('p');
+
+  rAngle.style.position = 'absolute';
+  rAngle.style.bottom = '40px';
+  rAngle.style.right = '10px';
+  rAngle.style.zIndex = 10000;
+  lAngle.style.position = 'absolute';
+  lAngle.style.bottom = '40px';
+  lAngle.style.left = '10px';
+  lAngle.style.zIndex = 10000;
+
+  rAngle.textContent = homeImages[home_element_count].name;
+  home_element_count++;
+  lAngle.innerHTML = home_element_count + '/' + ((window.innerWidth < 1000) ? homeImages.length - 4 : homeImages.length);
+  footer.append(lAngle,rAngle);
+  mainContent.append(footer);
+
   //console.log("fine lettura json e creazione immagini");
 }
 
-$(document).ready(function() {
-  generaImmagini();
-});
-
-function popolaProgetti(){
+//Genera il contenuto dei progetti(si occupa di prelevare le immagini e costruire gli elementi all'interno dei progetti)
+async function popolaProgetti(){
+  await getJson();
   const rightColumn = document.querySelector('.right-column');
+  const defaultProject = document.querySelector('#default-project');
+  progetti.forEach(progetto => {
+    const defaultImage = document.createElement('img');
+    defaultImage.src = progetto.copertina;
+    defaultImage.alt = progetto.titolo;
+    defaultImage.onclick = function() {
+      const classeProgetto = rimuoviSpazi(progetto.titolo);
+      showProject(classeProgetto);
+      addselected(document.querySelector('.'+ rimuoviSpazi(progetto.titolo)));
+    }
+    defaultProject.append(defaultImage);
+     
+  })
   progetti.forEach(progetto => {
     const projectDataContainer = document.createElement('div');
     projectDataContainer.classList.add("project-data-container");
@@ -168,25 +315,29 @@ function popolaProgetti(){
         t.textContent = progetto.titolo;
         projectText.appendChild(t);
         projectText.appendChild(genericInfo);
+
         const client = document.createElement('p');
-        client.innerHTML = '<b>Client: </b>' + progetto.cliente;
-        genericInfo.appendChild(client);
         const status = document.createElement('p');
-        status.innerHTML = '<b>Status: </b>' + progetto.status;
-        genericInfo.appendChild(status);
         const program = document.createElement('p');
-        program.innerHTML = '<b>Proigram: </b>' + progetto.program;
-        genericInfo.appendChild(program);
         const info = document.createElement('p');
+
+        client.innerHTML = '<b>Client: </b>' + progetto.cliente;
+        status.innerHTML = '<b>Status: </b>' + progetto.status;
+        program.innerHTML = '<b>Program: </b>' + progetto.program;
         info.innerHTML = '<b>Info: </b>' + progetto.info;
-        genericInfo.appendChild(info);
+
+        genericInfo.append(client,status,program,info);
         const pt = document.createElement('p');
-        pt.innerHTML = '<b>Project Team: </b>' + progetto.team;
-        //projectText.appendChild(pt);
         const testo = document.createElement('p');
+        pt.innerHTML = '<b>Project Team: </b>' + progetto.team;
         testo.textContent = progetto.testo;
-        //projectText.appendChild(testo);
-        projectText.append(pt,testo);
+        if (progetto.consultants != null){
+          const cons = document.createElement('p');
+          cons.innerHTML = '<b>Consultants: </b>' + progetto.consultants;
+          projectText.append(pt,cons,testo);
+        } else {
+          projectText.append(pt,testo);
+        }
         projectDataContainer.appendChild(projectText);
       }
       const img = document.createElement('img');
@@ -199,41 +350,14 @@ function popolaProgetti(){
   })
 }
 
-
-
-
-
-
-
-// Function to show content based on menu click
-function showContent(content) {
-  $('.slide-up-container').removeClass('show');
-  $('#' + content + 'Container').addClass('show');
-  if(content === 'projects'){
-    $('.project-data-container').removeClass('visible');
-    $('#' + 'default-project').addClass('visible');
-    if(window.innerWidth < 1000){
-      $('.project-data-container').removeClass('visible');
-      $('.projectsMenu').attr('id', 'show');
-    }
+//questa funzione viene richiamata al click su "progetti"
+async function showProjectPage(p){
+  if (document.querySelectorAll('.project-data-container').length == 1){
+    await popolaProgetti();
   }
+  showContent(p);
 }
 
-//Questa funzione mostra il progetto selezionato 
-function showProject(p){
-  $('.project-data-container').removeClass('visible');
-  document.querySelectorAll('.project-data-container').forEach( container => {
-    container.scrollTop = 0;
-  })
-  $('#' + p).addClass('visible');
-  if(window.innerWidth < 1000){
-    $('.projectsMenu').attr('id', '');
-    $('.project-data-container').removeClass('visible');
-    $('#' + p).addClass('visible');
-  }
-}
-
-function rimuoviSpazi(str) {
-  // Utilizza un'espressione regolare per sostituire tutti gli spazi con una stringa vuota
-  return str.replace(/[^a-zA-Z0-9]/g, '');
-}
+$(document).ready(function() {
+  HomePageContent();
+});
