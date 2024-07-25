@@ -5,6 +5,7 @@ let homeImages = null;
 let images = [];
 const mainContent = document.getElementById('main-content');//importante, non rimuovere
 let home_element_count = 0;
+let mobile_image_flag = 0;
 
 //definizione funzioni
 
@@ -19,7 +20,9 @@ async function getJson(){
 
 /* async function getJson(){
   const d = await fetch('https://www.fluidiforme.eu/sito-wp/progetti.json');
-  progetti = await d.json();
+  const d1 = await d.json();
+  progetti = await d1.projects;
+  homeImages = await d1.homeImages;
 } */
 
 //change image on tap for mobile
@@ -129,17 +132,12 @@ function updateFooters(){
   const p1 = document.querySelector('.footer p:first-of-type');
   const p2 = document.querySelector('.footer p:nth-of-type(2)');
   if (home_element_count < homeImages.length+1){
-    p2.innerHTML = homeImages[home_element_count].name;
-    home_element_count++;
-    p1.innerHTML = home_element_count + '/' + homeImages.length;
-    if(window.innerWidth < 1000){
-      p1.innerHTML = home_element_count + '/' + (homeImages.length - 4);
-      if(home_element_count == homeImages.length){
-      home_element_count = 0;
-      }
-    }else{
-      p1.innerHTML = home_element_count + '/' + homeImages.length;
+    if(window.innerWidth > 999){
+      p2.innerHTML = homeImages[home_element_count].name;    p2.innerHTML = homeImages[home_element_count].name;
     }
+    const temp = (home_element_count+1) % (homeImages.length+1)
+    home_element_count = ((temp == 0) ? 1 : temp);
+    p1.innerHTML = home_element_count + '/' + homeImages.length;    
   }
 }
 
@@ -194,7 +192,11 @@ function generaHomeImg(parametro){
 
 function generaHomeVideo(parametro){
   const video = document.createElement('video');
-  video.controls = true;
+  if(mobile_image_flag == 0){
+    video.style.display = 'block';
+    mobile_image_flag = 1;
+  }
+  video.controls = false;
   video.autoplay = true;
   video.loop = true;
   video.muted = true;
@@ -221,11 +223,10 @@ async function HomePageContent(){
   await getJson();
   if(window.innerWidth < 1000){
     homeImages.forEach(homeElement => {
-      //tutta questa parte può essere incapsulata in delle funzioni per rendere lo script più leggibile
     if(homeElement.format === "mp4") {
-/*       const vid = generaHomeVideo(homeElement);
+       const vid = generaHomeVideo(homeElement);
       mainContent.appendChild(vid);
-      images.push(vid); */
+      images.push(vid);
     } else {
       const img = generaHomeImg(homeElement)
       mainContent.appendChild(img);
@@ -262,16 +263,23 @@ async function HomePageContent(){
   footer.classList.add('footer');
   const rAngle = document.createElement('p');
   const lAngle = document.createElement('p');
-
-  rAngle.style.position = 'absolute';
-  rAngle.style.bottom = '40px';
-  rAngle.style.right = '10px';
-  rAngle.style.zIndex = 10000;
-  lAngle.style.position = 'absolute';
-  lAngle.style.bottom = '40px';
-  lAngle.style.left = '10px';
-  lAngle.style.zIndex = 10000;
-
+  if(window.innerWidth > 999){
+    rAngle.style.position = 'absolute';
+    rAngle.style.bottom = '40px';
+    rAngle.style.right = '10px';
+    rAngle.style.zIndex = 10000;
+    lAngle.style.position = 'absolute';
+    lAngle.style.bottom = '40px';
+    lAngle.style.left = '10px';
+    lAngle.style.zIndex = 10000;
+  }else{
+    lAngle.style.position = 'absolute';
+    //lAngle.style.top = '80%';
+    lAngle.style.right = '10px';
+    lAngle.style.zIndex = 10000;
+    lAngle.style.fontSize = '2.5rem';
+  }
+  
   rAngle.textContent = homeImages[home_element_count].name;
   home_element_count++;
   lAngle.innerHTML = home_element_count + '/' + ((window.innerWidth < 1000) ? homeImages.length - 4 : homeImages.length);

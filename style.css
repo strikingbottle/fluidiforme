@@ -30,6 +30,47 @@ header {
 div.project-data-container img {
   width: 100%;
 }
+
+
+
+#aboutContent img{
+  width: 100%;
+  height: auto;
+}
+
+#aboutContent p{
+  padding: 0;
+  margin: 0;
+  font-family: Arial, sans-serif; /* Imposta il font per i paragrafi all'interno di collegamenti */
+  font-size: 16px; /* Imposta la dimensione del font per i paragrafi all'interno di collegamenti */
+  color: black; /* Imposta il colore del testo per i paragrafi all'interno di collegamenti */
+}
+.left-column::-webkit-scrollbar { /* hides scrollbar */
+  display: none;
+}
+
+a p{
+  padding: 0;
+  margin: 0;
+  font-family: Arial, sans-serif; /* Imposta il font per i paragrafi all'interno di collegamenti */
+  font-size: 16px; /* Imposta la dimensione del font per i paragrafi all'interno di collegamenti */
+  color: grey; /* Imposta il colore del testo per i paragrafi all'interno di collegamenti */
+}
+.right-column::-webkit-scrollbar {
+  display: none;
+}
+.project-text p {
+  font-family: Arial, sans-serif;
+}
+.left-column {
+  overflow: scroll;
+}
+.footer{
+  font-size: 1.5rem;
+}
+
+
+
 /********************/
 /* Style for mobile */
 /********************/
@@ -49,15 +90,19 @@ div.project-data-container img {
   }
   nav a {
     text-align: center;
-    color: #fff;
     text-decoration: none;
+    color: #fff;
     border-radius: 10px;
-    padding: 10px 20px; /* Increase padding to give more space */
+    padding: 10px 10px  7px; /* Increase padding to give more space */
     white-space: nowrap; /* Prevent text from wrapping */
     overflow: hidden; /* Hide overflow text */
     text-overflow: ellipsis; /* Add ellipsis if text is too long */
     font-size: smaller; /* Reduce font size */  
-    
+/*     }
+    @media (max-width: 500px) {
+      nav a {
+        font-size: 0.7rem;
+      } */
   }
   nav a:hover {
     background-color: #555;
@@ -97,9 +142,18 @@ div.project-data-container img {
   .main-content img:first-child {
     display: block; /* Show the first image by default */
   }
-  .footer p:first-of-type{
-    top: 0;
-    color: black;
+
+  @media (max-height: 500px){
+    .footer p:first-of-type{
+      color: black;
+      top: 75%;
+    }
+  }
+  @media (min-height: 500px){
+    .footer p:first-of-type{
+      color: black;
+      top: 90%;
+    }
   }
   .footer p:nth-of-type(2){
     display: none;
@@ -199,7 +253,7 @@ div.project-data-container img {
   nav a {
     color: #fff;
     text-decoration: none;
-    padding: 8px 20px;
+    padding: 10px 20px 7px;
     display: inline-block;
     border-radius: 10px;
   }
@@ -213,7 +267,7 @@ div.project-data-container img {
     animation: slide-up 0.5s ease-in-out;
   }
   .slide-up-content {
-    margin-top: 40px;
+    margin-top: 65px;
     /* padding: 2%; */
     position: absolute;
     top: 0;
@@ -235,7 +289,7 @@ div.project-data-container img {
   }
   .project-container{
     display: grid;
-    grid-template-columns: 1fr 3fr; 
+    grid-template-columns: 400px 1fr; 
     gap: 20px;
     position: absolute;
     padding-top: 20px;
@@ -280,7 +334,7 @@ div.project-data-container img {
   }
   #aboutContent{
     display: grid;
-    grid-template-columns: 1fr 4fr 3fr;
+    grid-template-columns: 78fr 127fr 103fr;;
     overflow: scroll;
     gap: 10px;
     padding-top: 3%;
@@ -293,38 +347,7 @@ div.project-data-container img {
 
 
 
-#aboutContent img{
-  width: 100%;
-  height: auto;
-}
 
-#aboutContent p{
-  padding: 0;
-  margin: 0;
-  font-family: Arial, sans-serif; /* Imposta il font per i paragrafi all'interno di collegamenti */
-  font-size: 16px; /* Imposta la dimensione del font per i paragrafi all'interno di collegamenti */
-  color: black; /* Imposta il colore del testo per i paragrafi all'interno di collegamenti */
-}
-.left-column::-webkit-scrollbar { /* hides scrollbar */
-  display: none;
-}
-
-a p{
-  padding: 0;
-  margin: 0;
-  font-family: Arial, sans-serif; /* Imposta il font per i paragrafi all'interno di collegamenti */
-  font-size: 16px; /* Imposta la dimensione del font per i paragrafi all'interno di collegamenti */
-  color: grey; /* Imposta il colore del testo per i paragrafi all'interno di collegamenti */
-}
-.right-column::-webkit-scrollbar {
-  display: none;
-}
-.project-text p {
-  font-family: Arial, sans-serif;
-}
-.left-column {
-  overflow: scroll;
-}
 /* keyframes */
 @keyframes slide-up {
     from {
