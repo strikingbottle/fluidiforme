@@ -1,0 +1,396 @@
+/* Common style */
+
+
+body {
+  font-family: 'fLuidiforme-helvetica', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Prevent scrolling during animation */
+}
+
+header {
+  display: block;
+}
+
+
+#homeContainer {
+    background-color: blue;
+}
+
+.slide-up-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  overflow: hidden;
+  display: none;
+  z-index: 1;
+  padding: 20px; /* Adjust padding as needed */
+  box-sizing: border-box;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Optional: Add a box shadow */
+}
+/*questa funzione fa in modo che le immagini dentro un progetto siano sempre più piccole dello schermo*/
+div.project-data-container img {
+  width: 100%;
+}
+
+
+#aboutContent img{
+  width: 96%;
+  height: auto;
+}
+
+#aboutContent p{
+  padding: 0;
+  margin: 0;
+  font-family: Arial, sans-serif; /* Imposta il font per i paragrafi all'interno di collegamenti */
+  font-size: 16px; /* Imposta la dimensione del font per i paragrafi all'interno di collegamenti */
+  color: rgb(0, 0, 0); /* Imposta il colore del testo per i paragrafi all'interno di collegamenti */
+}
+.left-column::-webkit-scrollbar { /* hides scrollbar */
+  display: none;
+}
+
+a p{
+  padding: 0;
+  margin: 0;
+  font-family: Arial, sans-serif; /* Imposta il font per i paragrafi all'interno di collegamenti */
+  font-size: 16px; /* Imposta la dimensione del font per i paragrafi all'interno di collegamenti */
+  color: grey; /* Imposta il colore del testo per i paragrafi all'interno di collegamenti */
+}
+.right-column::-webkit-scrollbar {
+  display: none;
+}
+.project-text p {
+  font-family: Arial, sans-serif;
+}
+.left-column {
+  overflow: scroll;
+}
+.footer{
+  font-size: 1.5rem;
+  color: whitesmoke;
+}
+
+
+
+/********************/
+/* Style for mobile */
+/********************/
+@media (max-width: 999px) {
+  /* Rules for NavBar */
+  nav {
+    width: 90%;
+    display: grid;
+    grid-template-columns: 3fr 4fr 3fr;   
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #0000d4;
+    position: fixed;
+    top: 10px;
+    left: 5%;
+    z-index: 1000;
+  }
+  nav a {
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 10px;
+    padding: 10px 10px  7px; /* Increase padding to give more space */
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflow text */
+    text-overflow: ellipsis; /* Add ellipsis if text is too long */
+    font-size: smaller; /* Reduce font size */  
+/*     }
+    @media (max-width: 500px) {
+      nav a {
+        font-size: 0.7rem;
+      } */
+  }
+  nav a:hover {
+    background-color: #12009e;
+  }
+  /* Rules for slide-up effect on click and main containers */
+  .slide-up-container.show {
+    display: block;
+    animation: slide-up 0.5s ease-in-out;
+    padding-left: 5%;
+  }
+  .slide-up-content {
+    margin-top: 50px; /* Adjust to match header height */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 87%;
+  }
+  /* Rules for Main Content */
+  .main-content {
+    position: absolute;
+    top: 10;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+  /* Rules for slideshow in homepage */
+  .main-content img, video {
+    width: 100vw;
+    height: 100vh;  /* Adjusts the height to take up the remaining viewable area */
+    object-fit: cover; /* This property makes the image cover the given dimension, similar to background-size: cover; */
+    display: none; /* Hide all images initially */ 
+    position: absolute; /* Overlay images on top of each other */
+    top: -50px !important;
+    left: 0% !important;
+  }
+  .main-content img:first-child {
+    display: block; /* Show the first image by default */
+  }
+
+  @media (max-height: 500px){
+    .footer p:first-of-type{
+      color: rgb(0, 0, 255);
+      top: 75%;
+    }
+  }
+  @media (min-height: 500px){
+    .footer p:first-of-type{
+      color: rgb(0, 0, 255);
+      top: 90%;
+    }
+  }
+  .footer p:nth-of-type(2){
+    display: none;
+  }
+  /* Rules for about page */
+  #aboutContent {
+    padding: 20px;
+    width: auto;
+  }
+  /* Rules for Projects Page */
+  .projectsMenu {
+    display: none;
+  }
+
+  #show.projectsMenu {
+    display: block;
+    animation: slide-up 0.5s ease-in-out;
+  }
+
+  #projectsContent{
+    overflow: scroll;
+  }
+  /* Rules for Main Content */
+  .copertina {
+    position: absolute;
+    top: 10;
+    left: 0;
+    height: 100vh;
+    width: auto;
+  }
+  /* Rules for slideshow in homepage */
+  .copertina img {
+    width: 90%;
+    height: 90%;  /* Adjusts the height to take up the remaining viewable area */
+    object-fit: cover; /* This property makes the image cover the given dimension, similar to background-size: cover; */
+    display: none; /* Hide all images initially */ 
+    position: absolute; /* Overlay images on top of each other */
+    top: 2% !important;
+    left: 5% !important;
+  }
+  .projectsMenu a {
+    text-align: center;
+    display: block;
+    margin-top: 15px;
+    text-decoration: none;
+    color: #333; /* Cambia colore testo a tuo piacimento */
+  }
+
+
+  .project-data-container {
+    background-color: rgb(255, 255, 255);
+    display: none;
+    overflow-y: scroll;
+    padding: 20px; /* Adjust padding as needed */
+    height: 90vh;
+  }
+  .project-data-container.visible {
+    display: block;
+    animation: slide-up 0.5s ease-in-out;
+    overflow-y: auto;
+  }
+  #aboutContent{
+    display: grid;
+    grid-template-rows: auto;
+    overflow: scroll;
+    gap: 10px;
+    padding-top: 3%;
+  }
+  .contacts{
+    order: 3;
+  }
+  .aboutUs {
+    order: 1;
+  }
+  #aboutContent img {
+    order: 2;
+  }
+}
+
+/*********************/
+/* Style for desktop */
+/*********************/
+@media (min-width: 1000px) {
+  /* Rules for NavBar */
+  nav {
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: #fff;
+    padding: 2px;
+    margin: 10px;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 2;
+    font-size: 20px;
+    border: 0.5px solid #0000d41d;
+  }
+  nav a {
+    color: #0000d4;
+    text-decoration: none;
+    padding: 10px 20px 7px;
+    display: inline-block;
+    border-radius: 10px;
+  }
+  nav a:hover {
+    background-color: #0000d4;
+    color: #fff;
+  }
+
+  /* Rules for slide-up effect on click and main containers */
+
+  #homeContainer {
+    background-color: blue !important;
+    min-height: 100vh; /* This ensures the container takes up at least the full viewport height */
+  }
+
+  .slide-up-container.show {
+    display: block;
+    animation: slide-up 0.5s ease-in-out;
+  }
+  .slide-up-content {
+    margin-top: 65px;
+    /* padding: 2%; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .draggable {
+    cursor: move;
+  }
+  /* Rules for Projects Page behaviour */
+  .main-content {
+    position: absolute;
+    top: 10;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 108%;
+    height: 100%;
+    object-fit: cover; /* Ensures video covers the screen without distortion */
+    z-index: -1; /* Places the video behind the content */
+  }
+
+  .project-container{
+    display: grid;
+    grid-template-columns: 500px 1fr; 
+    gap: 20px;
+    position: absolute;
+    padding-top: 20px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Abilita lo scroll */
+  }
+  .left-column .projectsMenu a{
+    cursor: pointer;
+  }
+
+
+  .right-column {
+    overflow-y: scroll; /* Enable vertical scrolling */
+  }
+
+  .projectsMenu {
+    padding: 20px 20px 50px;
+    margin-bottom: 70px;/* questo margine serve a compensare la sfasatura dovuta al margin top e al padding di slideup-content */
+    overflow: auto;
+  }
+  .projectsMenu a {
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    margin-bottom: 10px; /* Add margin between menu items */
+    display: block;
+  }
+  
+  .projectsMenu a.selected{
+    color: rgb(0, 0, 255);
+  }
+  .projectsMenu a.selected p{
+    color: rgb(0, 0, 255);
+    opacity: 75%;
+  }
+
+  .project-data-container {
+    overflow: hidden;
+    display: none;
+    padding: 20px 20px 100px; /* Adjust padding as needed */
+    /*importante, il padding bottom(terzo valore può servire per about ecc*/
+  }
+  .project-data-container.visible {
+    display: block;
+    animation: slide-up 0.5s ease-in-out;
+  }
+  #aboutContent{
+    display: grid;
+    grid-template-columns: 78fr 127fr 103fr;;
+    overflow: none;
+    gap: 10px;
+    padding-top: 3%;
+  }
+
+  .contacts {
+    padding: 0 0 0 20px;
+  }
+}
+
+
+
+
+/* keyframes */
+@keyframes slide-up {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+}
+
+@font-face {
+  font-family: 'fluidiforme-helvetica';
+  src: url('fonts/font.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}

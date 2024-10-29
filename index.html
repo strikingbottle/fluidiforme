@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="style.css">
+  <style id="edit-nav-style"></style>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+  <title>Home Page</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#projects" onclick="showProjectPage('projects')">Projects</a>
+      <a href="">Fluidiforme</a>
+      <a href="#about" onclick="showContent('about')">About</a>
+    </nav>
+  </header>
+
+  <div class="home-container slide-up-container show" id="homeContainer">
+    <div class="slide-up-content" id="homeContent">
+      <video autoplay loop muted playsinline class="background-video">
+        <source src="images\FluidiformeIntro.mp4" type="video/mp4">
+        <!-- Optional fallback content if the video format is not supported -->
+        Your browser does not support HTML5 video.
+      </video>
+      <!-- Home section content is generated dynamically -->
+      <div class="main-content" id="main-content">
+
+      </div>
+    </div>
+  </div>
+
+  <div class="slide-up-container" id="aboutContainer">
+    <div class="slide-up-content" id="aboutContent">
+      <div class="contacts">
+        <p>
+          <b>Contacts</b><br>
+          For general inquiries - <a href="mailto:info@fluidiforme.eu">info@fluidiforme.eu</a> <br>
+          <br>
+          <b>IG</b> - <a href="https://www.instagram.com/fluidiforme/">@fluidiforme</a> <br>
+          <br>
+          <b>Address</b> <br>
+          Via Carlo Botta, 3E <br>
+          10122 Torino <br>
+          Italy <br>
+          <br>
+          <b>Current Team</b> <br>
+          Antonino Caridi <br>
+          Davide Casaletto <br>
+          Burak Avcioglu <br>
+          Giulia Sileo <br> 
+          <br>
+          <b>Past Collaborators</b> <br>
+          Giulia Pasquale <br>
+          <br>
+          <b>Job applications</b> <br>
+          We are always looking for people to join our design team. <br>
+          <br>
+          Please send your CV + portfolio (max 10 MB) at <a href="people@fluidiforme.eu">people@fluidiforme.eu</a> <br>
+        </p>
+      </div>
+      <div class="aboutUs">
+        <p>
+          <b>About Us</b> <br>
+          Fluidiforme is an informal laboratory and research project founded in 2020 by Antonino Caridi and Davide Casaletto. <br> <br>
+          The practice investigates the meaning of contemporary space according to the evolution of social, economic, environmental and digital issues. As a fluid practice, Fluidiforme strives to merge the scientific and artistic through a multidisciplinary approach and including the use of new tools in the practice.<br> <br>
+          Fluidiforme won several prizes in international design competition, such as a Cultural Center in Oslo (3rd place) and the new Science Museum in Rome (6th place). Fluidiforme was also selected among the young and most relevant italian practices by Premio Federico Maggia in 2022.<br> <br>
+          On the left, Davide Casaletto (1996) is an architect graduated from Politecnico di Torino, with exchange periods at ENSAPLV and ENSAPB (France). He gained experiences working for Herzog & de Meuron in Basel (CH). <br> <br>
+          On the right, Antonino Caridi (1996) is an architect graduated from Politecnico di Torino, with exchange periods at ENSPALV (France) and UB (Argentina). He gained experience working for OMA/Rem Koolhaas in Rotterdam (NL). <br> <br>
+          Fluidiforme is an informal laboratory and research project founded in 2020 by Antonino Caridi and Davide Casaletto. <br> <br>
+          The practice investigates the meaning of contemporary space according to the evolution of social, economic, environmental and digital issues. As a fluid practice, Fluidiforme strives to merge the scientific and artistic through a multidisciplinary approach and including the use of new tools in the practice.<br> <br>
+          Fluidiforme won several prizes in international design competition, such as a Cultural Center in Oslo (3rd place) and the new Science Museum in Rome (6th place). Fluidiforme was also selected among the young and most relevant italian practices by Premio Federico Maggia in 2022.<br> <br>
+          On the left, Davide Casaletto (1996) is an architect graduated from Politecnico di Torino, with exchange periods at ENSAPLV and ENSAPB (France). He gained experiences working for Herzog & de Meuron in Basel (CH). <br> <br>
+          On the right, Antonino Caridi (1996) is an architect graduated from Politecnico di Torino, with exchange periods at ENSPALV (France) and UB (Argentina). He gained experience working for OMA/Rem Koolhaas in Rotterdam (NL). <br> <br>
+          Fluidiforme is an informal laboratory and research project founded in 2020 by Antonino Caridi and Davide Casaletto. <br> <br>
+          The practice investigates the meaning of contemporary space according to the evolution of social, economic, environmental and digital issues. As a fluid practice, Fluidiforme strives to merge the scientific and artistic through a multidisciplinary approach and including the use of new tools in the practice.<br> <br>
+          Fluidiforme won several prizes in international design competition, such as a Cultural Center in Oslo (3rd place) and the new Science Museum in Rome (6th place). Fluidiforme was also selected among the young and most relevant italian practices by Premio Federico Maggia in 2022.<br> <br>
+          On the left, Davide Casaletto (1996) is an architect graduated from Politecnico di Torino, with exchange periods at ENSAPLV and ENSAPB (France). He gained experiences working for Herzog & de Meuron in Basel (CH). <br> <br>
+          On the right, Antonino Caridi (1996) is an architect graduated from Politecnico di Torino, with exchange periods at ENSPALV (France) and UB (Argentina). He gained experience working for OMA/Rem Koolhaas in Rotterdam (NL). <br> <br>
+          Fluidiforme is an informal laboratory and research project founded in 2020 by Antonino Caridi and Davide Casaletto. <br> <br>
+          The practice investigates the meaning of contemporary space according to the evolution of social, economic, environmental and digital issues. As a fluid practice, Fluidiforme strives to merge the scientific and artistic through a multidisciplinary approach and including the use of new tools in the practice.<br> <br>
+          Fluidiforme won several prizes in international design competition, such as a Cultural Center in Oslo (3rd place) and the new Science Museum in Rome (6th place). Fluidiforme was also selected among the young and most relevant italian practices by Premio Federico Maggia in 2022.<br> <br>
+          On the left, Davide Casaletto (1996) is an architect graduated from Politecnico di Torino, with exchange periods at ENSAPLV and ENSAPB (France). He gained experiences working for Herzog & de Meuron in Basel (CH). <br> <br>
+          On the right, Antonino Caridi (1996) is an architect graduated from Politecnico di Torino, with exchange periods at ENSPALV (France) and UB (Argentina). He gained experience working for OMA/Rem Koolhaas in Rotterdam (NL). <br> <br>
+        </p>
+      </div>
+      <img src="images/DSCF4373.jpg" alt="Team">
+    </div>
+  </div>
+
+  <div class="slide-up-container" id="projectsContainer">
+    <div class="slide-up-content" id="projectsContent">
+      <div class="project-container">
+        <div class="left-column">
+          <div class="projectsMenu">
+            <!-- Add more project links as needed -->
+          </div>
+        </div>
+        <div class="right-column">
+          <div class="project-data-container visible" id="default-project">
+            <!-- Add more images for each project -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<script src="script.js"></script>
+</body>
+</html>

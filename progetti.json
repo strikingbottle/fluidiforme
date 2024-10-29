@@ -1,0 +1,354 @@
+{
+  "projects": [
+    {
+      "titolo": "Sala Prove",
+      "descrizione":"Competition, Rome, 2024",
+      "copertina": "projects/Salaprove/G025.gif",
+      "immagini": [
+        "projects/Salaprove/X025_1.png",
+        "projects/Salaprove/X025_2.png",
+        "projects/Salaprove/X025_3.png",
+        "projects/Salaprove/X025_4.gif",
+        "projects/Salaprove/X025_5.png",
+        "projects/Salaprove/X025_6.png",
+        "projects/Salaprove/X025_7.png",
+        "projects/Salaprove/X025_8.png"
+      ],
+      "cliente":"Impreme Sud srl",
+      "status":"Competition",
+      "program":"Theatre",
+      "info":"Rome (IT), 2024",
+      "team":"Fluidiforme (Collaborators: Burak Avcioglu)",
+      "consultants": "Segmento.A, Ing. G. Ciavattone (Structure)",
+      "testo": "The typical courtyard morphology of the Turin grid, introverted and closed, gives way to a system that is open and accessible to the entire community. Drawing on the post-modern theories of Camillo Sitte and Christian de Portzamparc, the emotional and positive character of dense European urban fabrics emerges from the creation of public spaces that are both defined and open.\n\nFrom this interpretation of the city, an extremely porous ground floor is generated, open to the city and inviting citizens to pass through, connecting the southern urban front with the green area to the north. The public ground floor consists of two opposing buildings: to the east, the restored pre-existing structure; to the west, a newly constructed triangular building that defines the diagonal of the courtyard.",
+      "isLocked":false
+    },
+    {
+      "titolo": "Centodieci",
+      "descrizione":"Private commission, Gasperina, 2024",
+      "copertina": "projects/110/G029A.gif",
+      "immagini": [
+        "projects/Salaprove/X025_1.png"
+      ],
+      "cliente":"Impreme Sud srl",
+      "status":"Competition",
+      "program":"Theatre",
+      "info":"Rome (IT), 2024",
+      "team":"Fluidiforme (Collaborators: Burak Avcioglu)",
+      "consultants": "Segmento.A, Ing. G. Ciavattone (Structure)",
+      "testo": "The typical courtyard morphology of the Turin grid, introverted and closed, gives way to a system that is open and accessible to the entire community. Drawing on the post-modern theories of Camillo Sitte and Christian de Portzamparc, the emotional and positive character of dense European urban fabrics emerges from the creation of public spaces that are both defined and open.\n\nFrom this interpretation of the city, an extremely porous ground floor is generated, open to the city and inviting citizens to pass through, connecting the southern urban front with the green area to the north. The public ground floor consists of two opposing buildings: to the east, the restored pre-existing structure; to the west, a newly constructed triangular building that defines the diagonal of the courtyard.",
+      "isLocked":true
+    },
+    {
+      "titolo": "Betta",
+      "descrizione":"Private commission, Gasperina, 2024",
+      "copertina": "projects/Betta/G029B.gif",
+      "immagini": [
+        "projects/Salaprove/X025_1.png"
+      ],
+      "cliente":"Impreme Sud srl",
+      "status":"Competition",
+      "program":"Theater",
+      "info":"Roma (IT), 2024",
+      "team":"Fluidiforme, Burak Avcioglu",
+      "testo": "The typical courtyard morphology of the Turin grid, introverted and closed, gives way to a system that is open and accessible to the entire community. Drawing on the post-modern theories of Camillo Sitte and Christian de Portzamparc, the emotional and positive character of dense European urban fabrics emerges from the creation of public spaces that are both defined and open.\n\nFrom this interpretation of the city, an extremely porous ground floor is generated, open to the city and inviting citizens to pass through, connecting the southern urban front with the green area to the north. The public ground floor consists of two opposing buildings: to the east, the restored pre-existing structure; to the west, a newly constructed triangular building that defines the diagonal of the courtyard.",
+      "isLocked":true
+    },
+    {
+      "titolo": "Attraverso Sant'Eligio",
+      "descrizione":"Competition, Turin, 2024",
+      "copertina": "projects/AttraversoSantEligio/G021.gif",
+      "immagini": [
+        "projects/AttraversoSantEligio/X021_1.png",
+        "projects/AttraversoSantEligio/X021_2.png",
+        "projects/AttraversoSantEligio/X021_3.png",
+        "projects/AttraversoSantEligio/X021_4.png",
+        "projects/AttraversoSantEligio/X021_5.gif",
+        "projects/AttraversoSantEligio/X021_6.png",
+        "projects/AttraversoSantEligio/X021_7.png",
+        "projects/AttraversoSantEligio/X021_8.png"
+      ],
+      "cliente":"AAA Architetti Cercasi",
+      "status":"Competition",
+      "program":"Housing - amenities",
+      "info":"Turin (IT), 2024",
+      "team":"Fluidiforme (Collaborator: Burak Avcioglu)",
+      "testo": "The typical courtyard morphology of the Turin grid, introverted and closed, gives way to a system that is open and accessible to the entire community. Drawing on the post-modern theories of Camillo Sitte and Christian de Portzamparc, the emotional and positive character of dense European urban fabrics emerges from the creation of public spaces that are both defined and open.\n\nFrom this interpretation of the city, an extremely porous ground floor is generated, open to the city and inviting citizens to pass through, connecting the southern urban front with the green area to the north. The public ground floor consists of two opposing buildings: to the east, the restored pre-existing structure; to the west, a newly constructed triangular building that defines the diagonal of the courtyard.",
+      "isLocked":false
+    },
+    {
+      "titolo": "Tetralogia Urbana",
+      "descrizione":"Competition, Padova, 2024",
+      "copertina": "projects/TetralogiaUrbana/G020.gif",
+      "immagini": [
+        "projects/TetralogiaUrbana/X020_1.png",
+        "projects/TetralogiaUrbana/X020_2.png",
+        "projects/TetralogiaUrbana/X020_3.png",
+        "projects/TetralogiaUrbana/X020_4.png"
+      ],
+      "cliente":"AAA Architetti Cercasi",
+      "status":"Competition",
+      "program":"Housing - amenities",
+      "info":"Padova (IT), 2024",
+      "team":"Fluidiforme (Collaborator: Giulia Pasquale)",
+      "testo": "'Tetralogia Urbana' investigates the relationship between the design of affordable cooperative living and the city system, exploring the role of public space in defining strategies capable of generating urbanity.\n\nThe new complex opens up to the city, tracing an unprecedented diagonal axis that connects the Battaglia Canal with the tram line on Via Santa Maria Assunta, passing through the churchyard. This urban gesture connects the lot to the city on a small scale and, on a large scale, links it to Padua's infrastructure and natural heritage.\n\nThe diagonal designs and connects a 'tetralogy' of squares with different geometries, functions, and material treatments: the arena, Piazza Bassanello, the churchyard, and the flânerie. Rethinking the relationship between living and the city (polis) allows us to give a piece back to the people of Padua, thus restoring the right to the city (H. Lefebvre).",
+      "isLocked":false
+    },
+    {
+      "titolo": "Manifattura Tabacchi",
+      "descrizione":"Competition, Turin, 2023",
+      "copertina": "projects/ManifatturaTabacchi/G019.gif",
+      "immagini": [
+        "projects/ManifatturaTabacchi/X019_1.png",
+        "projects/ManifatturaTabacchi/X019_2.png",
+        "projects/ManifatturaTabacchi/X019_3.png",
+        "projects/ManifatturaTabacchi/X019_4.png"
+      ],
+      "cliente":"Agenzia del Demanio",
+      "status":"Competition",
+      "program":"Archive + Masterplan",
+      "info":"Turin (IT), 2023",
+      "team":"Fluidiforme, Sossio De Vita, Archisbang",
+      "consultants": "SFTWR (Image making)",
+      "testo": "Manifattura Tabacchi constitutes a fracture within the city of Turin, dividing the consolidated urban fabric from the river.\nThe project involves revitalizing the area through the creation of a new cultural hub, open to the city and the institutions.\nThe proposal moves from the removal of incongruous elements currently marking the plot, in order to reinforce the public vocation of the super block, creating new internal spaces with courtyards and passages and a strong axis connecting the city with the river park.\nThe new archive required by the brief is integrated into the existing structure with two large blocks that respect the historic building and define a new front facing the large courtyard overlooking Corso Regio Parco. The modular steel structure, the facades in glass and polycarbonate, integrated with photovoltaic panels and LED screens, contribute to the rhetoric of the new addition which, while taking up shapes and proportions from the historic building, differs in its finishes.",
+      "isLocked":false
+    },
+    {
+      "titolo": "Raw Cloud",
+      "descrizione":"Product design, 2024",
+      "copertina": "projects/RawCloud/GXXX.gif",
+      "immagini": [
+        "projects/RawCloud/XXXX_1.png",
+        "projects/RawCloud/XXXX_2.png",
+        "projects/RawCloud/XXXX_3.png",
+        "projects/RawCloud/XXXX_4.png",
+        "projects/RawCloud/XXXX_5.png",
+        "projects/RawCloud/XXXX_6.png"
+      ],
+      "cliente":"//",
+      "status":"//",
+      "program":"Product design",
+      "info":"Exhibited at MDW 2024",
+      "team":"Fluidiforme",
+      "testo": "Raw Cloud is a symbol of the interaction between the tangible and the abstract, the concrete and the fluid.\n\nIn its geometric form, the cube represents rigor and purity of line.\n\nHowever, the polyurethane foam coating subverts this static nature, introducing an element of fluidity and transformation. This contrast highlights the concept of duality and change.\n\nRaw Cloud can serve as a meeting point between individuals, encouraging human conversations and interactions. In its role as home furnishings, it can facilitate moments of sharing and social connection, providing a shared space for experience and contemplation, which is reflected in its very essence of uniting materiality and concept.",
+      "isLocked":false
+    },
+    {
+      "titolo": "Casa di cura",
+      "descrizione":"Competition, Falzes, 2023",
+      "copertina": "projects/Casadicura/G013.gif",
+      "immagini": [
+        "projects/Casadicura/X013_1.png",
+        "projects/Casadicura/X013_2.png",
+        "projects/Casadicura/X013_3.png",
+        "projects/Casadicura/X013_4.gif",
+        "projects/Casadicura/X013_5.png",
+        "projects/Casadicura/X013_6.png",
+        "projects/Casadicura/X013_7.png"
+      ],
+      "cliente":"Comune di Falzes",
+      "status":"2 phases competition – Third prize",
+      "program":"Housing + Care",
+      "info":"Falzes (IT), 2023-2024",
+      "team":"Fluidiforme, Sulkin + Marchissio, Segmento.A",
+      "testo": "The project aims to divide the concept of a single volume both functionally and compositionally into multiple 'residences' with the typical features of Alps architecture in natural landscape. As a result, the layout is characterized by 'systems' of aggregated functions.\n\nThe building consists of three levels, including the ground floor, which is accessed from a semi-public 'plaza' designed to host various events, permeating the interior space and connected to the main hall and the residence's info point, the chapel, and another 'private' entrance leading to the apartments (5 residences for the elderly).",
+      "isLocked":false
+    },
+    {
+      "titolo": "MNTR",
+      "descrizione":"Private commission, Montauro, ongoing",
+      "copertina": "projects/MNTR/G012.gif",
+      "immagini": [
+        "projects/Salaprove/X025_1.png"
+      ],
+      "cliente":"Private commission",
+      "status":"Ongoing",
+      "program":"Housing",
+      "info":"Montauro, 2023 - ongoing",
+      "team":"Fluidiforme",
+      "consultants":"Structure Sicilferro",
+      "testo": "The housing block is set in a highly valuable naturalistic context, nestled between the hills at the back and the bay just 500 meters from the plot. Nevertheless, today the area appears 'generic' as a result of the touristification and mass construction of the early 2000s.\n\nThe project's goal is to revive the characteristics of Mediterranean architecture reinterpreting the elements and materials that distinguish it, which had been lost in the area. Thus, the design and massing, with the setback and twist of the block, stem from the desire to maximize the southern front and the visual connection between the interiors and the sea, ensuring a window towards the sea to everyone.\nLarge cantilevering terraces define the southern front, while the northern front, in relation to the mountains behind, is marked by smaller openings and the distribution systems.",
+      "isLocked":true
+    },
+    {
+      "titolo": "Density: Mode d'emploi",
+      "descrizione":"Competition, Tilburg, 2023",
+      "copertina": "projects/Density/G010.gif",
+      "immagini": [
+        "projects/Density/X010_1.png",
+        "projects/Density/X010_2.png",
+        "projects/Density/X010_3.png",
+        "projects/Density/X010_4.png",
+        "projects/Density/X010_5.gif",
+        "projects/Density/X010_6.png",
+        "projects/Density/X010_7.png",
+        "projects/Density/X010_8.png"
+      ],
+      "cliente":"City of Tilburg",
+      "status":"Competition - Second prize",
+      "program":"Housing - amenities",
+      "info":"Tilburg (NL), 2023",
+      "team":"Fluidiforme",
+      "testo": "The urban fabric of Tilburg West is a palimpsest (Andre Corboz, 1987) on which the traces of post-war urbanization insist, with its Kennisas and an intense network of green and blue mixed with buildings formally heterogeneous, but functionally homogeneous.\n\nThe project plot is located in an interesting morphological context: in the North, the classic Dutch terraced houses, characterized by two-storey buildings with a strong relationship with the street and the backyard. To the south, there are modernist li-near blocks, with five floors above ground and a strong horizontal organization. To the east, large industrial buildings (factory box), introverted, that do not communi¬cate with the city around.\n\nThe idea of the project stems from the desire to maintain the genius loci of the area, reinterpreting the morphologies that already exist on the context, organizing the Super Block around the lake and connecting it to the urban paths.",
+      "isLocked":false
+    },
+    {
+      "titolo": "Museo della Scienza",
+      "descrizione":"Competition, Rome, 2022",
+      "copertina": "projects/MuseoScienza/G007.gif",
+      "immagini": [
+        "projects/MuseoScienza/X007_1.png",
+        "projects/MuseoScienza/X007_2.gif",
+        "projects/MuseoScienza/X007_3.png",
+        "projects/MuseoScienza/X007_4.png",
+        "projects/MuseoScienza/X007_5.png",
+        "projects/MuseoScienza/X007_6.png",
+        "projects/MuseoScienza/X007_7.png"
+      ],
+      "cliente":"Roma Capitale",
+      "status":"Competition - Sixth prize",
+      "program":"Museum",
+      "info":"Rome (IT), 2023",
+      "team":"Fluidiforme, KH Studio",
+      "consultants":"Sulkin + Marchissio, Segmento.A, HUB Engineering ",
+      "testo": "The Science Museum will be built in what is already today the new cultural living room of the city of Rome. An area between the bend of the Tevere and the slopes of Monte Mario, where the traces of a complex urban development have settled, as in a palimpsest defined by André Corboz: the area’s twentieth-century industrial tradition interfaces with works of contemporary architecture, such as the MAXXI by Zaha Hadid, the Palazzetto dello Sport by Nervi, the Auditorium by Piano and the Great MAXXI by LAN studio. \n\nAware of intervening in a context rich in history but inclined towards a new urbanism defined by the masterplan of the Viganò studio, our design process arose from a careful and critical reading of those traces left by past interventions and by the regulatory principles of those to come, in order to trace the genius loci of the Flaminio district.",
+      "isLocked":false
+    },
+    {
+      "titolo": "Petraro",
+      "descrizione":"Private commission, Gasperina, 2021",
+      "copertina": "projects/Petraro/G003.gif",
+      "immagini": [
+        "projects/Petraro/X003_1.png",
+        "projects/Petraro/X003_2.png",
+        "projects/Petraro/X003_3.png",
+        "projects/Petraro/X003_4.gif",
+        "projects/Petraro/X003_5.gif",
+        "projects/Petraro/X003_6.png",
+        "projects/Petraro/X003_7.png"
+      ],
+      "cliente":"Private",
+      "status":"Built",
+      "program":"Housing",
+      "info":"Gasperina (IT), 2021",
+      "team":"Fluidiforme",
+      "consultants": "Arch. G. Raynal (Local architect)",
+      "testo": "Petraro is a private commission we have dealt with in an aranceto in South of Italy, integrating a pre-existing crusher from 1800.\n\nThe client required a flexible space for guests with a spa, a bed and a private bathroom. The space is organised along a block of services located in the back (toilets, closet and mechanical) and a main free space with costumed millwork facing the aranceto and the sea.\n\nThe dependence has a timber structure with natural wooden cladding and big openings towards the South.",
+      "isLocked":false
+    },
+    {
+      "titolo": "Flanerie",
+      "descrizione":"Temporary installation, Biella, 2021",
+      "copertina": "projects/Flanerie/G002.gif",
+      "immagini": [
+        "projects/Flanerie/X002_1.png",
+        "projects/Flanerie/X002_2.png",
+        "projects/Flanerie/X002_3.gif",
+        "projects/Flanerie/X002_4.png",
+        "projects/Flanerie/X002_5.png",
+        "projects/Flanerie/X002_6.png",
+        "projects/Flanerie/X002_7.png"
+      ],
+      "cliente":"Premio Federico Maggia",
+      "status":"Built",
+      "program":"Installation",
+      "info":"Biella (IT), 2022",
+      "team":"Fluidiforme, Lorenzo Della Rosa, Matteo De Zardo, Iacopo Predieri",
+      "testo": "Flânerie is an open work that focuses on the experience - unique and free - of the subject, using architecture as a tool to educate to the complexity and plurality of experiences.\nFlânerie is the exasperation of division: it is learning through the discovery of the void.\n\nThe project is based on a dualistic design approach: on one side, the aim to preserve the tectonics of the Hangar and its rigid concrete grid; on the other side, the triggering of three tools: tower, tunnel, and platform. \n\nThe central part corresponds to the heart of the project and it’s where all the main functions are placed. The new polycarbonate panels can be opened according to the hangars’ openings, and they spread the light like a lantern on the waters of Ticino river. Instead, the last span totally lists its materiality because the original facade is substituted by glass panels that open the view on the countryside.",
+      "isLocked":false
+    },
+    {
+      "titolo": "Hangar Ticinum",
+      "descrizione":"Competition, Pavia, 2020",
+      "copertina": "projects/HangarTicinum/G001.gif",
+      "immagini": [
+        "projects/HangarTicinum/X001_1.png",
+        "projects/HangarTicinum/X001_2.png",
+        "projects/HangarTicinum/X001_3.png",
+        "projects/HangarTicinum/X001_4.png",  
+        "projects/HangarTicinum/X001_5.gif",
+        "projects/HangarTicinum/X001_7.gif",
+        "projects/HangarTicinum/X001_8.png"
+      ],
+      "cliente":"TerraViva Competitions",
+      "status":"Competition - <b>Honorable Mention</b>",
+      "program":"Community Hub",
+      "info":"Pavia (IT), 2021",
+      "team":"Fluidiforme, Gianluca Basile",
+      "testo": "The project is based on a dualistic design approach: on one side, the aim to preserve the tectonics of the Hangar and its rigid concrete grid; on the other side, the triggering of three tools: tower, tunnel, and platform. \n\n The central part corresponds to the heart of the project and it’s where all the main functions are placed. The new polycarbonate panels can be opened according to the hangars’ openings, and they spread the light like a lantern on the waters of Ticino river. Instead, the last span totally lists its materiality because the original facade is substituted by glass panels that open the view on the countryside.",
+      "isLocked":false
+    }
+  ],
+  "homeImages": [
+    {
+      "name":"Digital Survey",
+      "format":"mp4",
+      "path":"images/01_DIGITALSURVEY.mp4"
+    },
+    {
+      "name":"Fluidiforme Geography",
+      "format":"jpeg",
+      "path":"images/02_FLUIDIFORMEGEOGRAPHY.jpeg"
+    },
+    {
+      "name":"Site Visit",
+      "format":"jpeg",
+      "path":"images/03_SITEVISIT.jpeg"
+    },
+    {
+      "name":"Cleaning",
+      "format":"jpeg",
+      "path":"images/04_CLEANING.jpeg"
+    },
+    {
+      "name":"Crafting",
+      "format":"mp4",
+      "path":"images/05_CRAFTING.mp4"
+    },
+    {
+      "name":"Digital Space",
+      "format":"jpeg",
+      "path":"images/06_DIGITALSPACE.jpeg"
+    },
+    {
+      "name":"Physical Space",
+      "format":"jpeg",
+      "path":"images/07_PHYSICALSPACE.jpeg"
+    },
+    {
+      "name":"Cable Management",
+      "format":"jpeg",
+      "path":"images/08_CABLEMANAGMENT.jpeg"
+    },
+    {
+      "name":"Diy",
+      "format":"mp4",
+      "path":"images/09_DIY.mp4"
+    },
+    {
+      "name":"DirtyTalks",
+      "format":"mp4",
+      "path":"images/10_DIRTYTALKS.mp4"
+    },
+    {
+      "name":"Copy:Paste",
+      "format":"jpeg",
+      "path":"images/11_COPY:PASTE.jpeg"
+    },
+    {
+      "name":"Link It",
+      "format":"png",
+      "path":"images/12_LINKIT.png"
+    },
+    {
+      "name":"Pratofiorito",
+      "format":"jpeg",
+      "path":"images/13_PRATOFIORITO.jpeg"
+    },
+    {
+      "name":"Display Mode",
+      "format":"jpeg",
+      "path":"images/14_DISPLAYMODE.jpeg"
+    }
+  ]
+}
