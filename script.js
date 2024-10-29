@@ -6,6 +6,7 @@ let images = [];
 const mainContent = document.getElementById('main-content');//importante, non rimuovere
 let home_element_count = 0;
 let mobile_image_flag = 0;
+let desktop_image_creation_flag = 0;
 
 //definizione funzioni
 
@@ -15,15 +16,14 @@ async function getJson(){
   const d1 = await d.json();
   progetti = await d1.projects;
   homeImages = await d1.homeImages;
-  //console.log( await homeImages);
 }
 
-/* async function getJson(){
-  const d = await fetch('https://www.fluidiforme.eu/sito-wp/progetti.json');
-  const d1 = await d.json();
-  progetti = await d1.projects;
-  homeImages = await d1.homeImages;
-} */
+// async function getJson(){
+//   const d = await fetch('https://www.fluidiforme.eu/sito-wp/progetti.json');
+//   const d1 = await d.json();
+//   progetti = await d1.projects;
+//   homeImages = await d1.homeImages;
+// }
 
 //change image on tap for mobile
 function mobileVersion(){
@@ -64,10 +64,10 @@ function getMaxZ() {
     if(image.style.zIndex != NaN && image.style.zIndex > maxIndex)
       maxIndex = parseInt(image.style.zIndex) + 1;
   })
-  console.log(progetti.length);
-  //console.log('ActualMax', maxIndex)
   return maxIndex;
 }
+
+
 
 //add an image every time the user click on main content
 function showImages(){//da rivedere
@@ -78,10 +78,27 @@ function showImages(){//da rivedere
       images[index].style.zIndex = parseInt(getMaxZ()) + 1;
       mainContent.appendChild(images[index]);
       index++;
+    }else{
+      index = 0;
+      desktop_image_creation_flag = 1;
+    }
+  }
+  function displayImage(){
+    if(index < totalImages){
+      images[index].style.zIndex = parseInt(getMaxZ()) + 1;
+      images[index].style.display = '';
+      index++;
+    }else{
+      index = 0;
+      desktop_image_creation_flag = 1;
     }
   }
   $('.main-content').on('click', function() {
-    appendImage();
+    if (desktop_image_creation_flag == 0){
+      appendImage();
+    } else {
+      displayImage();
+    }
     bringOn();
     updateFooters();
   });
@@ -112,11 +129,13 @@ function createProjectMenu(){
   progetti.forEach(progetto => {
     const link = document.createElement('a');
     link.classList.add(rimuoviSpazi(progetto.titolo))
-    link.onclick = function (){
-      const classeProgetto = rimuoviSpazi(progetto.titolo);
-      showProject(classeProgetto);
-      addselected(this);
-    };
+    if(!progetto.isLocked){
+      link.onclick = function (){
+        const classeProgetto = rimuoviSpazi(progetto.titolo);
+        showProject(classeProgetto);
+        addselected(this);
+      };
+    }
     link.textContent = progetto.titolo;
     const descr = document.createElement('p');
     descr.textContent = progetto.descrizione;
@@ -126,23 +145,67 @@ function createProjectMenu(){
   })
 }
 
+//rimuove immagini e video dal container
+function removeMediaFromMainContent() {
+  var mainContent = document.getElementById("main-content");
+  var mediaElements = mainContent.querySelectorAll('img, video');
+   mediaElements.forEach(function(element) {
+      element.style.display = 'none';
+  });
+}
 
 //Aggiorna il contenuto dei footer
 function updateFooters(){
   const p1 = document.querySelector('.footer p:first-of-type');
   const p2 = document.querySelector('.footer p:nth-of-type(2)');
-  if (home_element_count < homeImages.length+1){
+  if (home_element_count < homeImages.length){
     if(window.innerWidth > 999){
-      p2.innerHTML = homeImages[home_element_count].name;    p2.innerHTML = homeImages[home_element_count].name;
+      p2.innerHTML = homeImages[home_element_count].name;
+      //p2.innerHTML = homeImages[home_element_count].name;
     }
     const temp = (home_element_count+1) % (homeImages.length+1)
     home_element_count = ((temp == 0) ? 1 : temp);
     p1.innerHTML = home_element_count + '/' + homeImages.length;    
+  }else{
+    if(window.innerWidth > 999){
+        removeMediaFromMainContent();
+        home_element_count = 0;
+    } else{
+      home_element_count = 1;
+    }
+    p1.innerHTML = home_element_count + '/' + homeImages.length;
   }
 }
 
 //Mostra il contenuto(Home/About/Project) in base alla selezione effettuata
 function showContent(content) {
+  document.getElementById("edit-nav-style").innerHTML = `
+    @media (min-width: 1000px) {
+      nav {
+        border-radius: 15px;
+        overflow: hidden;
+        background-color: #0000d4;
+        padding: 2px;
+        margin: 10px;
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        z-index: 2;
+        font-size: 20px;
+      }
+      nav a {
+        color: #fff;
+        text-decoration: none;
+        padding: 10px 20px 7px;
+        display: inline-block;
+        border-radius: 10px;
+      }
+      nav a:hover {
+        background-color: #fff;
+        color: #0000d4;
+      }
+    }
+  `;
   removeLinkSelected();
   $('.slide-up-container').removeClass('show');
   $('#' + content + 'Container').addClass('show');
@@ -196,6 +259,8 @@ function generaHomeVideo(parametro){
     video.style.display = 'block';
     mobile_image_flag = 1;
   }
+  video.setAttribute('playsinline', '');
+  video.setAttribute('webkit-playsinline', '');
   video.controls = false;
   video.autoplay = true;
   video.loop = true;
@@ -274,7 +339,6 @@ async function HomePageContent(){
     lAngle.style.zIndex = 10000;
   }else{
     lAngle.style.position = 'absolute';
-    //lAngle.style.top = '80%';
     lAngle.style.right = '10px';
     lAngle.style.zIndex = 10000;
     lAngle.style.fontSize = '2.5rem';
@@ -282,7 +346,7 @@ async function HomePageContent(){
   
   rAngle.textContent = homeImages[home_element_count].name;
   home_element_count++;
-  lAngle.innerHTML = home_element_count + '/' + ((window.innerWidth < 1000) ? homeImages.length - 4 : homeImages.length);
+  lAngle.innerHTML = home_element_count + '/' + ((window.innerWidth < 1000) ? homeImages.length : homeImages.length);
   footer.append(lAngle,rAngle);
   mainContent.append(footer);
 
@@ -298,10 +362,12 @@ async function popolaProgetti(){
     const defaultImage = document.createElement('img');
     defaultImage.src = progetto.copertina;
     defaultImage.alt = progetto.titolo;
-    defaultImage.onclick = function() {
-      const classeProgetto = rimuoviSpazi(progetto.titolo);
-      showProject(classeProgetto);
-      addselected(document.querySelector('.'+ rimuoviSpazi(progetto.titolo)));
+    if(!progetto.isLocked){
+      defaultImage.onclick = function() {
+        const classeProgetto = rimuoviSpazi(progetto.titolo);
+        showProject(classeProgetto);
+        addselected(document.querySelector('.'+ rimuoviSpazi(progetto.titolo)));
+      }
     }
     defaultProject.append(defaultImage);
      

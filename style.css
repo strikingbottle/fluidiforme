@@ -12,13 +12,18 @@ header {
   display: block;
 }
 
+
+#homeContainer {
+    background-color: blue;
+}
+
 .slide-up-container {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #fff;
+  background-color: rgb(255, 255, 255);
   overflow: hidden;
   display: none;
   z-index: 1;
@@ -32,7 +37,6 @@ div.project-data-container img {
 }
 
 
-
 #aboutContent img{
   width: 100%;
   height: auto;
@@ -43,7 +47,7 @@ div.project-data-container img {
   margin: 0;
   font-family: Arial, sans-serif; /* Imposta il font per i paragrafi all'interno di collegamenti */
   font-size: 16px; /* Imposta la dimensione del font per i paragrafi all'interno di collegamenti */
-  color: black; /* Imposta il colore del testo per i paragrafi all'interno di collegamenti */
+  color: rgb(0, 0, 0); /* Imposta il colore del testo per i paragrafi all'interno di collegamenti */
 }
 .left-column::-webkit-scrollbar { /* hides scrollbar */
   display: none;
@@ -67,6 +71,7 @@ a p{
 }
 .footer{
   font-size: 1.5rem;
+  color: whitesmoke;
 }
 
 
@@ -82,7 +87,7 @@ a p{
     grid-template-columns: 3fr 4fr 3fr;   
     border-radius: 10px;
     overflow: hidden;
-    background-color: rgba(68, 68, 68, 0.6);
+    background-color: #0000d4;
     position: fixed;
     top: 10px;
     left: 5%;
@@ -105,7 +110,7 @@ a p{
       } */
   }
   nav a:hover {
-    background-color: #555;
+    background-color: #12009e;
   }
   /* Rules for slide-up effect on click and main containers */
   .slide-up-container.show {
@@ -145,13 +150,13 @@ a p{
 
   @media (max-height: 500px){
     .footer p:first-of-type{
-      color: black;
+      color: rgb(0, 0, 255);
       top: 75%;
     }
   }
   @media (min-height: 500px){
     .footer p:first-of-type{
-      color: black;
+      color: rgb(0, 0, 255);
       top: 90%;
     }
   }
@@ -162,6 +167,19 @@ a p{
   #aboutContent {
     padding: 20px;
     width: auto;
+  }
+  #aboutContent{
+    display: grid;
+    grid-template-rows: auto;
+    overflow: scroll;
+    gap: 10px;
+    padding-top: 3%;
+  }
+  .aboutUs {
+    order: 1;
+  }
+  #aboutContent img {
+    order: 2;
   }
   /* Rules for Projects Page */
   .projectsMenu {
@@ -204,7 +222,7 @@ a p{
 
 
   .project-data-container {
-    background-color: #fff;
+    background-color: rgb(255, 255, 255);
     display: none;
     overflow-y: scroll;
     padding: 20px; /* Adjust padding as needed */
@@ -215,22 +233,11 @@ a p{
     animation: slide-up 0.5s ease-in-out;
     overflow-y: auto;
   }
-  #aboutContent{
-    display: grid;
-    grid-template-rows: auto;
-    overflow: scroll;
-    gap: 10px;
-    padding-top: 3%;
-  }
+  
   .contacts{
     order: 3;
   }
-  .aboutUs {
-    order: 1;
-  }
-  #aboutContent img {
-    order: 2;
-  }
+
 }
 
 /*********************/
@@ -239,29 +246,37 @@ a p{
 @media (min-width: 1000px) {
   /* Rules for NavBar */
   nav {
-    background-color: #444;
-    border-radius: 10px;
+    border-radius: 15px;
     overflow: hidden;
-    background-color: rgba(68, 68, 68, 0.6);
+    background-color: #fff;
     padding: 2px;
     margin: 10px;
     position: fixed;
     top: 10px;
     left: 10px;
     z-index: 2;
+    font-size: 20px;
+    border: 0.5px solid #0000d41d;
   }
   nav a {
-    color: #fff;
+    color: #0000d4;
     text-decoration: none;
     padding: 10px 20px 7px;
     display: inline-block;
     border-radius: 10px;
   }
   nav a:hover {
-    background-color: #555;
+    background-color: #0000d4;
+    color: #fff;
   }
 
   /* Rules for slide-up effect on click and main containers */
+
+  #homeContainer {
+    background-color: blue !important;
+    min-height: 100vh; /* This ensures the container takes up at least the full viewport height */
+  }
+
   .slide-up-container.show {
     display: block;
     animation: slide-up 0.5s ease-in-out;
@@ -274,7 +289,7 @@ a p{
     left: 0;
     width: 100%;
     height: 100%;
-}
+  }
 
   .draggable {
     cursor: move;
@@ -287,9 +302,19 @@ a p{
     width: 100%;
     height: 100%;
   }
+
+  .background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+
   .project-container{
     display: grid;
-    grid-template-columns: 400px 1fr; 
+    grid-template-columns: 500px 1fr; 
     gap: 20px;
     position: absolute;
     padding-top: 20px;
@@ -298,27 +323,33 @@ a p{
     height: 100%;
     overflow: auto; /* Abilita lo scroll */
   }
+  .left-column .projectsMenu a{
+    cursor: pointer;
+  }
+
+
   .right-column {
     overflow-y: scroll; /* Enable vertical scrolling */
   }
 
   .projectsMenu {
-    padding: 20px 0 0 20px;
+    padding: 20px 20px 50px;
     margin-bottom: 70px;/* questo margine serve a compensare la sfasatura dovuta al margin top e al padding di slideup-content */
+    overflow: auto;
   }
   .projectsMenu a {
     font-size: 20px;
-    color: black;
+    color: rgb(0, 0, 0);
     text-decoration: none;
     margin-bottom: 10px; /* Add margin between menu items */
     display: block;
   }
   
   .projectsMenu a.selected{
-    color: blue;
+    color: rgb(0, 0, 255);
   }
   .projectsMenu a.selected p{
-    color: blue;
+    color: rgb(0, 0, 255);
     opacity: 75%;
   }
 
@@ -339,6 +370,11 @@ a p{
     gap: 10px;
     padding-top: 3%;
   }
+  #aboutContent img{
+    width: 96%;
+    height: auto;
+  }
+  
 
   .contacts {
     padding: 0 0 0 20px;
