@@ -11,19 +11,19 @@ let desktop_image_creation_flag = 0;
 //definizione funzioni
 
 /* funzione per ambiente di test */
-async function getJson(){
-  const d = await fetch('/progetti.json');
-  const d1 = await d.json();
-  progetti = await d1.projects;
-  homeImages = await d1.homeImages;
-}
-
 // async function getJson(){
-//   const d = await fetch('https://www.fluidiforme.eu/sito-wp/progetti.json');
+//   const d = await fetch('/progetti.json');
 //   const d1 = await d.json();
 //   progetti = await d1.projects;
 //   homeImages = await d1.homeImages;
 // }
+
+ async function getJson(){
+  const d = await fetch('https://www.fluidiforme.eu/sito-wp/progetti.json');
+  const d1 = await d.json();
+  progetti = await d1.projects;
+  homeImages = await d1.homeImages;
+}
 
 //change image on tap for mobile
 function mobileVersion(){
